@@ -17,3 +17,6 @@ Puntuación (sobre 10):
 * +2 Readme.md bien documentado con videos.
 * -3 Warnings o que no pase los tests.
 * +1 Setup de CI/CD
+
+
+Seguro que os sale lo mejor que podáis !!
