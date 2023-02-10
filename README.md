@@ -18,5 +18,8 @@ Puntuación (sobre 10):
 * -3 Warnings o que no pase los tests.
 * +1 Setup de CI/CD
 
+> Buenas Carlos, acuérdate de hacer pull antes de intentar pushear nada, que nos la lías. :D
+
+Rama carlos
 
 Seguro que os sale lo mejor que podáis !!
