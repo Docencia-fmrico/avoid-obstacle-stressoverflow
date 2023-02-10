@@ -19,4 +19,4 @@ Puntuación (sobre 10):
 * +1 Setup de CI/CD
 
 
-Seguro que os sale genial!!!
+Seguro que os sale lo mejor que podáis !!
