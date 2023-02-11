@@ -7,13 +7,13 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(kobuki_msgs REQUIRED)
+find_package(kobuki_ros_interfaces REQUIRED)
 
 set(dependencies
   rclcpp
   sensor_msgs
   geometry_msgs
-  kobuki_msgs
+  kobuki_ros_interfaces
 )
 
 include_directories(include)
