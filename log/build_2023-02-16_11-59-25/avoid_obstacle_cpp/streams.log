@@ -1,0 +1,29 @@
+[0.059s] Invoking command in '/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/teresa/ros2_ws/install/joy_teleop:/home/teresa/ros2_ws/install/nav2_simple_commander:/home/teresa/ros2_ws/install/mouse_teleop:/home/teresa/ros2_ws/install/launch_pal:/home/teresa/ros2_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j12 -l12
+[0.201s] [35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[0.274s] [ 33%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[0.275s] [ 66%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[19.136s] [100%] [32m[1mLinking CXX executable avoidObstacle[0m
+[20.190s] [100%] Built target avoidObstacle
+[20.220s] Invoked command in '/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/teresa/ros2_ws/install/joy_teleop:/home/teresa/ros2_ws/install/nav2_simple_commander:/home/teresa/ros2_ws/install/mouse_teleop:/home/teresa/ros2_ws/install/launch_pal:/home/teresa/ros2_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j12 -l12
+[20.422s] Invoking command in '/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/teresa/ros2_ws/install/joy_teleop:/home/teresa/ros2_ws/install/nav2_simple_commander:/home/teresa/ros2_ws/install/mouse_teleop:/home/teresa/ros2_ws/install/launch_pal:/home/teresa/ros2_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+[20.449s] -- Install configuration: ""
+[20.450s] -- Execute custom install script
+[20.451s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/lib/avoid_obstacle_cpp/avoidObstacle
+[20.452s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/avoid_obstacle.launch.py
+[20.452s] -- Symlinking: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/kobuki.launch.py
+[20.480s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp
+[20.481s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp
+[20.481s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.sh
+[20.481s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.dsv
+[20.482s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.sh
+[20.482s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.dsv
+[20.482s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.bash
+[20.482s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.sh
+[20.483s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.zsh
+[20.483s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.dsv
+[20.483s] -- Symlinking: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.dsv
+[20.511s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/packages/avoid_obstacle_cpp
+[20.512s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig.cmake
+[20.512s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig-version.cmake
+[20.512s] -- Up-to-date symlink: /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.xml
+[20.518s] Invoked command in '/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/teresa/ros2_ws/install/joy_teleop:/home/teresa/ros2_ws/install/nav2_simple_commander:/home/teresa/ros2_ws/install/mouse_teleop:/home/teresa/ros2_ws/install/launch_pal:/home/teresa/ros2_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp

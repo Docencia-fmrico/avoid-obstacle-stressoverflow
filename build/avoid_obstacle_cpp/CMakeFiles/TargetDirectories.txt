@@ -1,0 +1,10 @@
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/uninstall.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/avoid_obstacle_cpp_uninstall.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/avoidObstacle.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/test.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/edit_cache.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/rebuild_cache.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/list_install_components.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/install.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/install/local.dir
+/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles/install/strip.dir

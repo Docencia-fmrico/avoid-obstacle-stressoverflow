@@ -1,0 +1,4 @@
+source;share/avoid_obstacle_cpp/local_setup.bash
+source;share/avoid_obstacle_cpp/local_setup.dsv
+source;share/avoid_obstacle_cpp/local_setup.sh
+source;share/avoid_obstacle_cpp/local_setup.zsh

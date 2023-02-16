@@ -53,7 +53,7 @@ private:
   const rclcpp::Duration SCAN_TIMEOUT {1s};
 
   static constexpr float SPEED_LINEAR = 0.3f;
-  static constexpr float SPEED_ANGULAR = 0.3f;
+  static constexpr float SPEED_ANGULAR = 0.1f;
   static constexpr float OBSTACLE_DISTANCE = 1.0f;
 
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;

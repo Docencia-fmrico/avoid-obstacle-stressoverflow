@@ -18,8 +18,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    bumpgo_cmd = Node(package='avoid_obstacles_cpp',
-                      executable='avoidobstacles',
+    avoidObstacles_cmd = Node(package='avoid_obstacle_cpp',
+                      executable='avoidObstacle',
                       output='screen',
                       parameters=[{
                         'use_sim_time': True
@@ -31,6 +31,6 @@ def generate_launch_description():
                       ])
 
     ld = LaunchDescription()
-    ld.add_action(avoidobstacles_cmd)
+    ld.add_action(avoidObstacles_cmd)
 
     return ld
