@@ -80,11 +80,12 @@ AvoidObstacleNode::control_cycle()
       }
       break;*/
     case TURN1:
+      
       out_vel.angular.z = SPEED_ANGULAR;
-
-      /*if (check_turn_2_forward()) {
+      if (check_turn_2_forward()) {
+        RCLCPP_INFO(get_logger(), "TURN1 -> FORWARD");
         go_state(FORWARD);
-      }*/
+      }
 
       break;
     case STOP:
@@ -132,7 +133,8 @@ AvoidObstacleNode::check_stop_2_forward()
 bool
 AvoidObstacleNode::check_turn_2_forward()
 {
+  RCLCPP_INFO(get_logger(), "CHECK_TURN_2_FORWARD");
   // Turning for 2 seconds
-  return (now() - state_ts_) > TURNING_TIME;
+  return (now() - state_ts_ ) > TURNING_TIME;
 }
 }
