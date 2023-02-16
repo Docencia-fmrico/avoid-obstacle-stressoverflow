@@ -81,8 +81,6 @@ AvoidObstacleNode::control_cycle()
       }
       break;*/
     case TURN1:
-      RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
-      
       out_vel.angular.z = SPEED_ANGULAR;
       if (check_turn_2_forward()) {
         RCLCPP_INFO(get_logger(), "TURN1 -> FORWARD");
@@ -136,10 +134,6 @@ AvoidObstacleNode::check_stop_2_forward()
 bool
 AvoidObstacleNode::check_turn_2_forward()
 {
-  //RCLCPP_INFO(get_logger(), "CHECK_TURN_2_FORWARD");
-
-  //RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
-  
   // Turning for 2 seconds
   return (now() - state_ts_ ) > TURNING_TIME;
 }

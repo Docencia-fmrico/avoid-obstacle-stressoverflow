@@ -22,7 +22,7 @@ def generate_launch_description():
                       executable='avoidObstacle',
                       output='screen',
                       parameters=[{
-                        'use_sim_time': True
+                        'use_sim_time': False
                       }],
                       remappings=[
                         ('input_scan', '/scan_filtered'),
