@@ -1,1 +1,0 @@
-/home/teresa/ros2_ws/src/avoid-obstacle-stressoverflow/launch/avoid_obstacle.launch.py

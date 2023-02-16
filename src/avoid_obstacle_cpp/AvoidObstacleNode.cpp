@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include <utility>
+#include <chrono>
 #include "avoid_obstacle_cpp/AvoidObstacleNode.hpp"
 
 #include "sensor_msgs/msg/laser_scan.hpp"
@@ -62,10 +63,10 @@ AvoidObstacleNode::control_cycle()
     case FORWARD:
       out_vel.linear.x = SPEED_LINEAR;
 
-      if (check_forward_2_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> STOP");
+      /*if (check_forward_2_stop()) {
+        RCLCPP_IN((now() - state_ts_ ) > TURNING_TIME)FO(get_logger(), "FORWARD -> STOP");
         go_state(STOP);
-      }
+      }*/
 
       if (check_forward_2_back()) {
         RCLCPP_INFO(get_logger(), "FORWARD -> BACK");
@@ -80,6 +81,7 @@ AvoidObstacleNode::control_cycle()
       }
       break;*/
     case TURN1:
+      RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
       
       out_vel.angular.z = SPEED_ANGULAR;
       if (check_turn_2_forward()) {
@@ -102,6 +104,7 @@ AvoidObstacleNode::control_cycle()
 void
 AvoidObstacleNode::go_state(int new_state)
 {
+  RCLCPP_INFO(get_logger(), "GOSTATE");
   state_ = new_state;
   state_ts_ = now();
 }
@@ -133,7 +136,10 @@ AvoidObstacleNode::check_stop_2_forward()
 bool
 AvoidObstacleNode::check_turn_2_forward()
 {
-  RCLCPP_INFO(get_logger(), "CHECK_TURN_2_FORWARD");
+  //RCLCPP_INFO(get_logger(), "CHECK_TURN_2_FORWARD");
+
+  //RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
+  
   // Turning for 2 seconds
   return (now() - state_ts_ ) > TURNING_TIME;
 }
