@@ -1,1 +1,0 @@
-/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/launch/avoid_obstacle.launch.py
