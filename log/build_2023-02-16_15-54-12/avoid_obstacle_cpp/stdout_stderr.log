@@ -1,0 +1,9 @@
+[35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable avoidObstacle[0m
+/usr/bin/ld: CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o: in function `void __gnu_cxx::new_allocator<avoid_obstacle_cpp::LidarLedFeedbackNode>::construct<avoid_obstacle_cpp::LidarLedFeedbackNode>(avoid_obstacle_cpp::LidarLedFeedbackNode*)':
+avoidObstacle_main.cpp:(.text._ZN9__gnu_cxx13new_allocatorIN18avoid_obstacle_cpp20LidarLedFeedbackNodeEE9constructIS2_JEEEvPT_DpOT0_[_ZN9__gnu_cxx13new_allocatorIN18avoid_obstacle_cpp20LidarLedFeedbackNodeEE9constructIS2_JEEEvPT_DpOT0_]+0x31): undefined reference to `avoid_obstacle_cpp::LidarLedFeedbackNode::LidarLedFeedbackNode()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:215: avoidObstacle] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

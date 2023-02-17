@@ -1,0 +1,11 @@
+[35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In function ‘[01m[Kbool avoid_obstacle_cpp::check_dodge_2_yaw()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:199:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kcheck_forward_2_yaw[m[K’ was not declared in this scope; did you mean ‘[01m[Kcheck_dodge_2_yaw[m[K’?
+  199 |   return [01;31m[Kcheck_forward_2_yaw[m[K();
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+      |          [32m[Kcheck_dodge_2_yaw[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

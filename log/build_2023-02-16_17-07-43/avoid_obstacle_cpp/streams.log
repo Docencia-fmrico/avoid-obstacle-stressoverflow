@@ -1,0 +1,29 @@
+[0.027s] Invoking command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j8 -l8
+[0.108s] [35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[0.146s] [ 25%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[2.274s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In member function ‘[01m[Kvoid avoid_obstacle_cpp::AvoidObstacleNode::control_cycle()[m[K’:
+[2.274s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:82:81:[m[K [01;31m[Kerror: [m[K‘[01m[Kkobuki_ros_interfaces::msg::sound[m[K’ has not been declared
+[2.274s]    82 |       kobuki_ros_interfaces::msg::Sound out_sound = kobuki_ros_interfaces::msg::[01;31m[Ksound[m[K::ON;
+[2.274s]       |                                                                                 [01;31m[K^~~~~[m[K
+[2.274s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:89:10:[m[K [01;31m[Kerror: [m[Kjump to case label
+[2.274s]    89 |     case [01;31m[KFORWARD[m[K:
+[2.274s]       |          [01;31m[K^~~~~~~[m[K
+[2.274s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:82:41:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kkobuki_ros_interfaces::msg::Sound out_sound[m[K’
+[2.275s]    82 |       kobuki_ros_interfaces::msg::Sound [01;36m[Kout_sound[m[K = kobuki_ros_interfaces::msg::sound::ON;
+[2.275s]       |                                         [01;36m[K^~~~~~~~~[m[K
+[2.275s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:109:10:[m[K [01;31m[Kerror: [m[Kjump to case label
+[2.275s]   109 |     case [01;31m[KYAW_TURN[m[K:
+[2.275s]       |          [01;31m[K^~~~~~~~[m[K
+[2.275s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:82:41:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kkobuki_ros_interfaces::msg::Sound out_sound[m[K’
+[2.275s]    82 |       kobuki_ros_interfaces::msg::Sound [01;36m[Kout_sound[m[K = kobuki_ros_interfaces::msg::sound::ON;
+[2.275s]       |                                         [01;36m[K^~~~~~~~~[m[K
+[2.276s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:122:10:[m[K [01;31m[Kerror: [m[Kjump to case label
+[2.276s]   122 |     case [01;31m[KSTOP[m[K:
+[2.276s]       |          [01;31m[K^~~~[m[K
+[2.276s] [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:82:41:[m[K [01;36m[Knote: [m[K  crosses initialization of ‘[01m[Kkobuki_ros_interfaces::msg::Sound out_sound[m[K’
+[2.276s]    82 |       kobuki_ros_interfaces::msg::Sound [01;36m[Kout_sound[m[K = kobuki_ros_interfaces::msg::sound::ON;
+[2.276s]       |                                         [01;36m[K^~~~~~~~~[m[K
+[5.379s] gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+[5.380s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+[5.380s] gmake: *** [Makefile:146: all] Error 2
+[5.383s] Invoked command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j8 -l8

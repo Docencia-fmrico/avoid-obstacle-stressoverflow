@@ -1,0 +1,37 @@
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:26:69:[m[K [01;31m[Kerror: [m[K‘[01m[KLidarLedFeedbackNode[m[K’ is not a member of ‘[01m[Kavoid_obstacle_cpp[m[K’; did you mean ‘[01m[Klidar_led_feedback_cpp::LidarLedFeedbackNode[m[K’?
+   26 |   auto lidarLedFeedback_node = std::make_shared<avoid_obstacle_cpp::[01;31m[KLidarLedFeedbackNode[m[K>();
+      |                                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:18[m[K:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/include/avoid_obstacle_cpp/LidarLedFeedbackNode.hpp:25:7:[m[K [01;36m[Knote: [m[K‘[01m[Klidar_led_feedback_cpp::LidarLedFeedbackNode[m[K’ declared here
+   25 | class [01;36m[KLidarLedFeedbackNode[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:26:90:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >()[m[K’
+   26 |   auto lidarLedFeedback_node = [01;31m[Kstd::make_shared<avoid_obstacle_cpp::LidarLedFeedbackNode>()[m[K;
+      |                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+                 from [01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:15[m[K:
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+  875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:26:90:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   26 |   auto lidarLedFeedback_node = [01;31m[Kstd::make_shared<avoid_obstacle_cpp::LidarLedFeedbackNode>()[m[K;
+      |                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:[m[K In constructor ‘[01m[Klidar_led_feedback_cpp::LidarLedFeedbackNode::LidarLedFeedbackNode()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:31:1:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+   31 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:37:30:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""ms[m[K’
+   37 |   timer_ = create_wall_timer([01;31m[K50ms[m[K, std::bind(&LidarLedFeedbackNode::control_cycle, this));
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:[m[K In member function ‘[01m[Kvoid lidar_led_feedback_cpp::LidarLedFeedbackNode::control_cycle()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:59:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kpos[m[K’ was not declared in this scope; did you mean ‘[01m[Kpow[m[K’?
+   59 |   if (last_scan_->ranges[[01;31m[Kpos[m[K] < OBSTACLE_DISTANCE) {
+      |                          [01;31m[K^~~[m[K
+      |                          [32m[Kpow[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:104: CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:90: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

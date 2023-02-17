@@ -18,6 +18,10 @@
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "kobuki_ros_interfaces/msg/button_event.hpp"
+#include "kobuki_ros_interfaces/msg/bumper_event.hpp"
+#include "kobuki_ros_interfaces/msg/wheel_drop_event.hpp"
+#include "kobuki_ros_interfaces/msg/led.hpp"
+#include "kobuki_ros_interfaces/msg/sound.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 namespace avoid_obstacle_cpp
@@ -31,37 +35,50 @@ public:
   AvoidObstacleNode();
 
 private:
+  void button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg);
   void scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg);
   void control_cycle();
 
-  static const int FORWARD = 0;
-  static const int BACK = 1;
-  static const int TURN1 = 2;
-  static const int STOP = 3;
+  static const int READY = 1;
+  static const int FORWARD = 2;
+  static const int BACK = 3;
+  static const int YAW_TURN_IN = 4;
+  static const int YAW_TURN_OUT = 5;
+  static const int DODGE_TURN = 6;
+  static const int STOP = 7;
   int state_;
   rclcpp::Time state_ts_;
 
   void go_state(int new_state);
-  bool check_forward_2_back();
+  bool check_ready_2_forward();
+  bool check_forward_2_yaw();
   bool check_forward_2_stop();
-  bool check_back_2_turn();
-  bool check_turn_2_forward();
   bool check_stop_2_forward();
+  bool check_yaw_2_dodge();
+  bool check_dodge_2_yaw_new_obstacle();
+  bool check_dodge_2_yaw_out();
+  bool check_yaw_out_2_forward();
 
-  const rclcpp::Duration TURNING_TIME {2s};
-  const rclcpp::Duration BACKING_TIME {2s};
+  const rclcpp::Duration YAW_TIME {7.5s};
+  const rclcpp::Duration DODGE_TIME {20s};
   const rclcpp::Duration SCAN_TIMEOUT {1s};
 
-  static constexpr float SPEED_LINEAR = 0.3f;
+  kobuki_ros_interfaces::msg::Sound out_sound;
+  kobuki_ros_interfaces::msg::Led out_led;
+
+  static constexpr float SPEED_LINEAR = 0.1f;
   static constexpr float SPEED_ANGULAR = 0.3f;
   static constexpr float OBSTACLE_DISTANCE = 1.0f;
 
-  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
-  //rclcpp::Subscription<kobuki_ros_interfaces::msg::ButtonEvent> SharedPtr button_sub_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_pub_;
+  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
+  rclcpp::Subscription<kobuki_ros_interfaces::msg::ButtonEvent>::SharedPtr button_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
 
   sensor_msgs::msg::LaserScan::UniquePtr last_scan_;
+  kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr last_button_event_;
 };
 
 }  // namespace avoid_obstacle_cpp

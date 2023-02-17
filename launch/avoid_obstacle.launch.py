@@ -22,12 +22,15 @@ def generate_launch_description():
                       executable='avoidObstacle',
                       output='screen',
                       parameters=[{
-                        'use_sim_time': True
+                        'use_sim_time': False
                       }],
                       remappings=[
                         ('input_scan', '/scan_filtered'),
                         ('output_vel', '/cmd_vel'),
-                        ('input_button', '/events/button')
+                        ('input_button', '/events/button'),
+                        ('lidar_led', '/commands/led2'),
+                        ('status_led', '/commands/led1'),
+                        ('output_sound', '/commands/sound')
                       ])
 
     ld = LaunchDescription()
