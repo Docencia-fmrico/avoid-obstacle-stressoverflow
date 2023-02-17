@@ -1,0 +1,27 @@
+[0.015s] Invoking command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[0.074s] [ 25%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[8.649s] [ 50%] [32m[1mLinking CXX executable avoidObstacle[0m
+[9.261s] [100%] Built target avoidObstacle
+[9.270s] Invoked command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20
+[9.315s] Invoking command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+[9.322s] -- Install configuration: ""
+[9.322s] -- Execute custom install script
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/lib/avoid_obstacle_cpp/avoidObstacle
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/avoid_obstacle.launch.py
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.sh
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.dsv
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.sh
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.dsv
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.bash
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.sh
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.zsh
+[9.323s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.dsv
+[9.323s] -- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.dsv
+[9.331s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/packages/avoid_obstacle_cpp
+[9.331s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig.cmake
+[9.331s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig-version.cmake
+[9.331s] -- Up-to-date symlink: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.xml
+[9.333s] Invoked command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp

@@ -1,0 +1,72 @@
+[0.017s] Invoking command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp
+[0.092s] -- The C compiler identification is GNU 11.3.0
+[0.223s] -- The CXX compiler identification is GNU 11.3.0
+[0.315s] -- Detecting C compiler ABI info
+[0.518s] -- Detecting C compiler ABI info - done
+[0.526s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.529s] -- Detecting C compile features
+[0.530s] -- Detecting C compile features - done
+[0.535s] -- Detecting CXX compiler ABI info
+[0.724s] -- Detecting CXX compiler ABI info - done
+[0.729s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.729s] -- Detecting CXX compile features
+[0.729s] -- Detecting CXX compile features - done
+[0.936s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.124s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[1.248s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.396s] -- Found rclcpp: 16.0.3 (/opt/ros/humble/share/rclcpp/cmake)
+[1.619s] -- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.640s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.661s] -- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.688s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.724s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.824s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.835s] -- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.147s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.180s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.227s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.254s] -- Looking for pthread.h
+[2.331s] -- Looking for pthread.h - found
+[2.331s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.413s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.413s] -- Found Threads: TRUE  
+[2.581s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.700s] -- Found kobuki_ros_interfaces: 1.0.0 (/home/arantxa/workspaceNew/install/kobuki_ros_interfaces/share/kobuki_ros_interfaces/cmake)
+[2.851s] -- Found ament_lint_auto: 0.12.5 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.966s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.972s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.972s] -- Configured cppcheck include dirs: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/include
+[2.972s] -- Configured cppcheck exclude dirs and/or files: 
+[2.978s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.978s] -- Configured cpplint exclude dirs and/or files: 
+[2.980s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.983s] -- Added test 'lint_cmake' to check CMake code style
+[2.985s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.991s] -- Added test 'uncrustify' to check C / C++ code style
+[2.991s] -- Configured uncrustify additional arguments: 
+[2.994s] -- Added test 'xmllint' to check XML markup files
+[2.997s] -- Configuring done
+[3.006s] -- Generating done
+[3.007s] -- Build files have been written to: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+[3.015s] Invoked command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp
+[3.015s] Invoking command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20
+[3.065s] [ 75%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[3.066s] [ 75%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[3.066s] [ 75%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o[0m
+[4.645s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In member function ‘[01m[Kvoid avoid_obstacle_cpp::AvoidObstacleNode::control_cycle()[m[K’:
+[4.645s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:121:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kcheck_any_2_emergency_stop[m[K’ was not declared in this scope
+[4.645s]   121 |       if ([01;31m[Kcheck_any_2_emergency_stop[m[K()) {
+[4.645s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.647s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K At global scope:
+[4.647s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:250:1:[m[K [01;31m[Kerror: [m[K‘[01m[KAvoidObstacleNode[m[K’ has not been declared
+[4.647s]   250 | [01;31m[KAvoidObstacleNode[m[K::check_any_2_emergency_stop()
+[4.647s]       | [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[4.652s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In function ‘[01m[Kbool check_any_2_emergency_stop()[m[K’:
+[4.652s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:252:10:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_bumper_event_[m[K’ was not declared in this scope
+[4.652s]   252 |   return [01;31m[Klast_bumper_event_[m[K != nullptr;
+[4.652s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[7.641s] gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+[7.642s] gmake[2]: *** Waiting for unfinished jobs....
+[8.341s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+[8.341s] gmake: *** [Makefile:146: all] Error 2
+[8.344s] Invoked command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20

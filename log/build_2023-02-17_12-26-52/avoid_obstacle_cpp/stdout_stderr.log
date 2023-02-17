@@ -1,0 +1,16 @@
+[35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+In file included from [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:17[m[K:
+[01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/include/avoid_obstacle_cpp/AvoidObstacleNode.hpp:88:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kkobuki_ros_[m[K’ does not name a type
+   88 |   [01;31m[Kkobuki_ros_[m[K interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
+      |   [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:17[m[K:
+[01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/include/avoid_obstacle_cpp/AvoidObstacleNode.hpp:88:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kkobuki_ros_[m[K’ does not name a type
+   88 |   [01;31m[Kkobuki_ros_[m[K interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
+      |   [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:104: CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,23 @@
+[35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[ 50%] [32m[1mLinking CXX executable avoidObstacle[0m
+[100%] Built target avoidObstacle
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/lib/avoid_obstacle_cpp/avoidObstacle
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/avoid_obstacle.launch.py
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.sh
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.dsv
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.sh
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.dsv
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.bash
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.sh
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.zsh
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.dsv
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.dsv
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/packages/avoid_obstacle_cpp
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig.cmake
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig-version.cmake
+-- Symlinking: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.xml

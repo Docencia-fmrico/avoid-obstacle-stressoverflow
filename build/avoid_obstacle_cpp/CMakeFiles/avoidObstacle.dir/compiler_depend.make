@@ -257,26 +257,26 @@ CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o: ../../src/avoidObstac
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
   /usr/include/c++/11/csignal \
   /usr/include/signal.h \
@@ -960,26 +960,26 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o: ../
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
   /usr/include/c++/11/csignal \
   /usr/include/signal.h \
@@ -1648,10 +1648,10 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
   /usr/include/c++/11/bits/quoted_string.h \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
   /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
-  /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp \
+  /home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
   /usr/include/c++/11/csignal \
   /usr/include/signal.h \
@@ -2091,8 +2091,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp:
@@ -2116,6 +2114,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
 
@@ -2208,10 +2208,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/rclcpp/rclcpp/future_return_code.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/publisher_options.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/is_ros_compatible_type.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/get_message_type_support_handle.hpp:
 
@@ -2403,13 +2399,11 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rmw/rmw/security_options.h:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
 /usr/include/c++/11/cerrno:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/stdio.h:
 
 /usr/include/c++/11/cstdio:
 
@@ -2423,15 +2417,15 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp:
-
-/usr/include/c++/11/bits/ostream_insert.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/ctype.h:
 
 /usr/include/c++/11/locale:
+
+/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
@@ -2477,8 +2471,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/asm-generic/errno-base.h:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp:
-
 /opt/ros/humble/include/rmw/rmw/subscription_options.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
@@ -2502,6 +2494,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp:
 
 /usr/include/c++/11/pstl/execution_defs.h:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
 
@@ -2665,6 +2659,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/c++/11/bits/range_access.h:
 
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp:
+
 /usr/include/c++/11/iterator:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
@@ -2673,6 +2669,10 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/contexts/default_context.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/c++/11/cstdlib:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /opt/ros/humble/include/rcutils/rcutils/types/string_map.h:
@@ -2680,6 +2680,12 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /usr/include/c++/11/memory:
 
 /opt/ros/humble/include/rmw/rmw/serialized_message.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/button_event.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -2726,6 +2732,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /usr/include/c++/11/ctime:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -2793,6 +2801,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
@@ -2800,10 +2810,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/c++/11/algorithm:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
-
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -2824,6 +2830,8 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /usr/include/c++/11/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -2881,8 +2889,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:
 
 /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h:
@@ -2915,8 +2921,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__traits.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/wchar.h:
@@ -2943,8 +2947,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/c++/11/bits/allocator.h:
-
 /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp:
 
 /usr/include/c++/11/cmath:
@@ -2959,61 +2961,59 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp:
 
-/opt/ros/humble/include/rcpputils/rcpputils/visibility_control.hpp:
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
 
-/usr/include/sched.h:
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
+/opt/ros/humble/include/rcutils/rcutils/logging.h:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__struct.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/bumper_event.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__builder.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__builder.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/bumper_event__traits.hpp:
 
-/usr/include/c++/11/cstdlib:
+/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__traits.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__struct.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/wheel_drop_event.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp:
+/usr/include/c++/11/bits/codecvt.h:
 
-/opt/ros/humble/include/rmw/rmw/event.h:
+/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h:
 
-/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
+/usr/include/c++/11/bits/allocator.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_common.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/wheel_drop_event__struct.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__builder.hpp:
 
-/usr/include/c++/11/bits/stl_multimap.h:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/led__traits.hpp:
+/opt/ros/humble/include/rcl/rcl/wait.h:
 
-/usr/include/stdio.h:
+/opt/ros/humble/include/rclcpp/rclcpp/is_ros_compatible_type.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/sound.hpp:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__struct.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/c++/11/bits/stl_numeric.h:
+/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:
 
-/usr/include/linux/close_range.h:
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp:
 
-/opt/ros/humble/include/rcl/rcl/init_options.h:
-
-/opt/ros/humble/include/rcpputils/rcpputils/join.hpp:
+/opt/ros/humble/include/rcl/rcl/node.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:
 
@@ -3037,8 +3037,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
 
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__traits.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
@@ -3056,6 +3054,14 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/c++/11/bits/stl_numeric.h:
+
+/usr/include/linux/close_range.h:
+
+/opt/ros/humble/include/rcl/rcl/init_options.h:
+
+/opt/ros/humble/include/rcpputils/rcpputils/join.hpp:
 
 /usr/include/c++/11/chrono:
 
@@ -3097,11 +3103,15 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/include/c++/11/bits/stl_list.h:
 
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__builder.hpp:
+
 /usr/include/c++/11/map:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp:
 
 /usr/include/c++/11/bits/stl_map.h:
+
+/usr/include/c++/11/bits/stl_multimap.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp:
 
@@ -3217,10 +3227,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
 
-/usr/include/c++/11/bits/codecvt.h:
-
-/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h:
-
 /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/offered_deadline_missed.h:
@@ -3247,8 +3253,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h:
 
-/opt/ros/humble/include/rcl/rcl/wait.h:
-
 /opt/ros/humble/include/rcl/rcl/client.h:
 
 /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
@@ -3256,8 +3260,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/rcl/rcl/context.h:
 
 /opt/ros/humble/include/rmw/rmw/event_callback_type.h:
-
-/opt/ros/humble/include/rcl/rcl/node.h:
 
 /opt/ros/humble/include/rcl/rcl/node_options.h:
 
@@ -3278,6 +3280,14 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/twist.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp:
+
+/opt/ros/humble/include/rmw/rmw/event.h:
+
+/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_common.hpp:
 
 /usr/include/c++/11/clocale:
 
@@ -3343,9 +3353,19 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/logger.hpp:
 
+/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp:
+
+/opt/ros/humble/include/rcpputils/rcpputils/visibility_control.hpp:
+
+/usr/include/sched.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/utilities.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:
+
+/home/arantxa/workspaceNew/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/led.hpp:
 
 /opt/ros/humble/include/rmw/rmw/names_and_types.h:
 
@@ -3355,14 +3375,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:
 
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
-
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
-
-/opt/ros/humble/include/rcutils/rcutils/logging.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:
@@ -3370,8 +3382,6 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
-
-/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/exceptions.hpp:
 
@@ -3399,15 +3409,9 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rcpputils/rcpputils/time.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:
-
 /opt/ros/humble/include/tracetools/tracetools/utils.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_map.hpp:
-
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/sound__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_base.hpp:
 
@@ -3429,13 +3433,11 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/clock.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp:
 
@@ -3466,7 +3468,5 @@ CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o: 
 /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__traits.hpp:
 
 /opt/ros/humble/include/rmw/rmw/time.h:
-
-/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/build/kobuki_ros_interfaces/rosidl_generator_cpp/kobuki_ros_interfaces/msg/detail/button_event__struct.hpp:
 
 /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp:

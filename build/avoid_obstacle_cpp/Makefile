@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow
+CMAKE_SOURCE_DIR = /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+CMAKE_BINARY_DIR = /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

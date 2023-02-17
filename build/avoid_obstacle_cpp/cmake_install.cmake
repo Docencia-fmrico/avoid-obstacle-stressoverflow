@@ -1,8 +1,8 @@
-# Install script for directory: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow
+# Install script for directory: /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp")
+  set(CMAKE_INSTALL_PREFIX "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

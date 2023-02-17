@@ -30,7 +30,8 @@ def generate_launch_description():
                         ('input_button', '/events/button'),
                         ('lidar_led', '/commands/led2'),
                         ('status_led', '/commands/led1'),
-                        ('output_sound', '/commands/sound')
+                        ('output_sound', '/commands/sound'),
+                        ('input_bumper', '/events/bumper')
                       ])
 
     ld = LaunchDescription()

@@ -1,0 +1,18 @@
+[0.014s] Invoking command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20
+[0.072s] [35m[1mConsolidate compiler generated dependencies of target avoidObstacle[0m
+[0.090s] [ 25%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[0.090s] [ 50%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[1.505s] In file included from [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoidObstacle_main.cpp:17[m[K:
+[1.506s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/include/avoid_obstacle_cpp/AvoidObstacleNode.hpp:88:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kkobuki_ros_[m[K’ does not name a type
+[1.506s]    88 |   [01;31m[Kkobuki_ros_[m[K interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
+[1.506s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[1.527s] In file included from [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:17[m[K:
+[1.527s] [01m[K/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/include/avoid_obstacle_cpp/AvoidObstacleNode.hpp:88:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kkobuki_ros_[m[K’ does not name a type
+[1.527s]    88 |   [01;31m[Kkobuki_ros_[m[K interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
+[1.527s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[1.779s] gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:104: CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o] Error 1
+[1.779s] gmake[2]: *** Waiting for unfinished jobs....
+[4.499s] gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+[4.499s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+[4.499s] gmake: *** [Makefile:146: all] Error 2
+[4.501s] Invoked command in '/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arantxa/workspaceNew/install/joy_teleop:/home/arantxa/workspaceNew/install/nav2_simple_commander:/home/arantxa/workspaceNew/install/mouse_teleop:/home/arantxa/workspaceNew/install/launch_pal:/home/arantxa/workspaceNew/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j20 -l20

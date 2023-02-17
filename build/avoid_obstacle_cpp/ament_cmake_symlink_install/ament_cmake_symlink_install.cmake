@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${destination}")
+      set(destination "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -311,49 +311,49 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install("TARGETS" "avoidObstacle" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/avoid_obstacle_cpp")
-include("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_directory("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" DIRECTORY "launch" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_directory("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" DIRECTORY "launch" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/avoid_obstacle_cpp/environment")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/avoid_obstacle_cpp/environment")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/avoid_obstacle_cpp")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/packages/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/packages/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/packages/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_index/share/ament_index/resource_index/packages/avoid_obstacle_cpp" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig.cmake" "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig-version.cmake" "DESTINATION" "share/avoid_obstacle_cpp/cmake")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig.cmake" "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig-version.cmake" "DESTINATION" "share/avoid_obstacle_cpp/cmake")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig.cmake" "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig-version.cmake" "DESTINATION" "share/avoid_obstacle_cpp/cmake")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig.cmake" "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/ament_cmake_core/avoid_obstacle_cppConfig-version.cmake" "DESTINATION" "share/avoid_obstacle_cpp/cmake")
 
-# install(FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/package.xml" "DESTINATION" "share/avoid_obstacle_cpp")
-ament_cmake_symlink_install_files("/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow" FILES "/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/package.xml" "DESTINATION" "share/avoid_obstacle_cpp")
+# install(FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/package.xml" "DESTINATION" "share/avoid_obstacle_cpp")
+ament_cmake_symlink_install_files("/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow" FILES "/home/arantxa/workspaceNew/src/avoid-obstacle-stressoverflow/package.xml" "DESTINATION" "share/avoid_obstacle_cpp")

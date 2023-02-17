@@ -43,6 +43,10 @@ AvoidObstacleNode::AvoidObstacleNode()
     "input_scan", rclcpp::SensorDataQoS(),
     std::bind(&AvoidObstacleNode::scan_callback, this, _1));
 
+  bumper_sub_ = create_subscription<kobuki_ros_interfaces::msg::BumperEvent>( // comprobar que sea el mensaje
+    "input_bumper", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::bumper_callback, this, _1));
+
   led_pub_ = create_publisher<kobuki_ros_interfaces::msg::Led>("status_led", 10);
   sound_pub_ = create_publisher<kobuki_ros_interfaces::msg::Sound>("output_sound", 10);
   vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("output_vel", 10);
@@ -61,6 +65,13 @@ void
 AvoidObstacleNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 {
   last_scan_ = std::move(msg);
+}
+
+void
+AvoidObstacleNode::bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg) // comprobar que sea asi
+{
+  RCLCPP_INFO(get_logger(), "CRASH!");
+  last_bumper_event_ = std::move(msg);
 }
 
 void
@@ -108,19 +119,29 @@ AvoidObstacleNode::control_cycle()
         RCLCPP_INFO(get_logger(), "FORWARD -> YAW TURN");
         go_state(YAW_TURN_IN);
       }
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
       break;
-    /*case BACK:
+    case BACK:
       out_vel.linear.x = -SPEED_LINEAR;
 
-      if (check_back_2_turn()) {
-        go_state(TURN);
+      if (check_back_2_yaw_turn_in()) {
+        out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
+        led_pub_->publish(out_led);
+        go_state(YAW_TURN_IN);
       }
-      break;*/
+      break;
     case YAW_TURN_IN:
       out_vel.angular.z = SPEED_ANGULAR;
       if (check_yaw_2_dodge()) {
         RCLCPP_INFO(get_logger(), "YAW TURN -> DODGE TURN");
         go_state(DODGE_TURN);
+      }
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
       }
       break;
     case DODGE_TURN:
@@ -141,6 +162,11 @@ AvoidObstacleNode::control_cycle()
         go_state(YAW_TURN_OUT);
       }
 
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
+
       break;
     case YAW_TURN_OUT:
       out_vel.angular.z = SPEED_ANGULAR;
@@ -148,11 +174,29 @@ AvoidObstacleNode::control_cycle()
         RCLCPP_INFO(get_logger(), "YAW TURN OUT -> FORWARD");
         go_state(FORWARD);
       }
+
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
       break;
     case STOP:
       if (check_stop_2_forward()) {
         RCLCPP_INFO(get_logger(), "STOP -> FORWARD");
         go_state(FORWARD);
+      }
+      break;
+    case EMERGENCY_STOP:
+      out_vel.linear.x = 0;
+      out_vel.angular.z = 0;
+      if (check_emergency_2_back()) {
+        out_led.value = kobuki_ros_interfaces::msg::Led::RED;
+        led_pub_->publish(out_led);
+        out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
+        sound_pub_->publish(out_sound);
+        last_bumper_event_ = nullptr;
+        RCLCPP_INFO(get_logger(), "EMERGENCY STOP -> BACK");
+        go_state(BACK);
       }
       break;
   }
@@ -224,6 +268,25 @@ bool
 AvoidObstacleNode::check_yaw_out_2_forward()
 {
   return check_yaw_2_dodge();
+}
+
+bool
+AvoidObstacleNode::check_any_2_emergency_stop()
+{
+  return last_bumper_event_ != nullptr;
+}
+
+bool
+AvoidObstacleNode::check_emergency_2_back()
+{
+  return last_bumper_event_ == nullptr;
+}
+
+bool
+AvoidObstacleNode::check_back_2_yaw_turn_in()
+{
+  // Turning for 10 seconds
+  return (now() - state_ts_ ) > BACK_TIME;
 }
 
 } // namespace avoid_obstacle_cpp
