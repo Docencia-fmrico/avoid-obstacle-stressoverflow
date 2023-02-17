@@ -1,0 +1,7 @@
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:[m[K In constructor ‘[01m[Klidar_led_feedback_cpp::LidarLedFeedbackNode::LidarLedFeedbackNode()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp:32:1:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+   32 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:90: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

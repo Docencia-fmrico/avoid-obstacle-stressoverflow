@@ -19,6 +19,10 @@
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "kobuki_ros_interfaces/msg/button_event.hpp"
+#include "kobuki_ros_interfaces/msg/bumper_event.hpp"
+#include "kobuki_ros_interfaces/msg/wheel_drop_event.hpp"
+#include "kobuki_ros_interfaces/msg/led.hpp"
+#include "kobuki_ros_interfaces/msg/sound.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 namespace avoid_obstacle_cpp
@@ -29,20 +33,30 @@ using std::placeholders::_1;
 
 AvoidObstacleNode::AvoidObstacleNode()
 : Node("avoid_obstacle"),
-  state_(FORWARD)
+  state_(READY)
 {
+  button_sub_ = create_subscription<kobuki_ros_interfaces::msg::ButtonEvent>(
+    "input_button", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::button_callback, this, _1));
+
   scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
     "input_scan", rclcpp::SensorDataQoS(),
     std::bind(&AvoidObstacleNode::scan_callback, this, _1));
 
-  /*button_sub_ = create_subscription<kobuki_ros_interfaces::msg::ButtonEvent>(
-    "input_button", rclcpp::SensorDataQoS(),
-    std::bind(&AvoidObstacleNode::button_callback, this, _1));*/
+  led_pub_ = create_publisher<kobuki_ros_interfaces::msg::Led>("status_led", 10);
+  sound_pub_ = create_publisher<kobuki_ros_interfaces::msg::Sound>("output_sound", 10);
   vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("output_vel", 10);
-  timer_ = create_wall_timer(50ms, std::bind(&AvoidObstacleNode::control_cycle, this));
+  timer_ = create_wall_timer(25ms, std::bind(&AvoidObstacleNode::control_cycle, this));
 
   state_ts_ = now();
 }
+
+void
+AvoidObstacleNode::button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg)
+{
+  last_button_event_ = std::move(msg);
+}
+
 void
 AvoidObstacleNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 {
@@ -60,17 +74,39 @@ AvoidObstacleNode::control_cycle()
   geometry_msgs::msg::Twist out_vel;
 
   switch (state_) {
+    case READY:
+      out_led.value = kobuki_ros_interfaces::msg::Led::ORANGE;
+      led_pub_->publish(out_led);
+
+      if (!check_ready_2_forward()) {
+        break;
+      }
+
+      RCLCPP_INFO(get_logger(), "STARTING...");
+
+      out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
+      out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
+
+      sound_pub_->publish(out_sound);
+      led_pub_->publish(out_led);
+
+      RCLCPP_INFO(get_logger(), "READY -> FORWARD");
+      go_state(FORWARD);
+
+      break;
     case FORWARD:
       out_vel.linear.x = SPEED_LINEAR;
 
-      /*if (check_forward_2_stop()) {
-        RCLCPP_IN((now() - state_ts_ ) > TURNING_TIME)FO(get_logger(), "FORWARD -> STOP");
+      if (check_forward_2_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> STOP");
         go_state(STOP);
-      }*/
+      }
 
-      if (check_forward_2_back()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> BACK");
-        go_state(TURN1);
+      if (check_forward_2_yaw()) {
+        out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
+        sound_pub_->publish(out_sound);
+        RCLCPP_INFO(get_logger(), "FORWARD -> YAW TURN");
+        go_state(YAW_TURN_IN);
       }
       break;
     /*case BACK:
@@ -80,15 +116,38 @@ AvoidObstacleNode::control_cycle()
         go_state(TURN);
       }
       break;*/
-    case TURN1:
-      RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
-      
+    case YAW_TURN_IN:
       out_vel.angular.z = SPEED_ANGULAR;
-      if (check_turn_2_forward()) {
-        RCLCPP_INFO(get_logger(), "TURN1 -> FORWARD");
-        go_state(FORWARD);
+      if (check_yaw_2_dodge()) {
+        RCLCPP_INFO(get_logger(), "YAW TURN -> DODGE TURN");
+        go_state(DODGE_TURN);
+      }
+      break;
+    case DODGE_TURN:
+      out_vel.angular.z = -SPEED_ANGULAR*0.75;
+      out_vel.linear.x = SPEED_LINEAR;
+
+      if (check_dodge_2_yaw_new_obstacle()) {
+        out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
+        sound_pub_->publish(out_sound);
+        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN IN");
+        go_state(YAW_TURN_IN);
       }
 
+      if (check_dodge_2_yaw_out()) {
+        out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
+        sound_pub_->publish(out_sound);
+        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN OUT");
+        go_state(YAW_TURN_OUT);
+      }
+
+      break;
+    case YAW_TURN_OUT:
+      out_vel.angular.z = SPEED_ANGULAR;
+      if (check_yaw_out_2_forward()) {
+        RCLCPP_INFO(get_logger(), "YAW TURN OUT -> FORWARD");
+        go_state(FORWARD);
+      }
       break;
     case STOP:
       if (check_stop_2_forward()) {
@@ -104,12 +163,19 @@ AvoidObstacleNode::control_cycle()
 void
 AvoidObstacleNode::go_state(int new_state)
 {
-  RCLCPP_INFO(get_logger(), "GOSTATE");
   state_ = new_state;
   state_ts_ = now();
+  RCLCPP_INFO(get_logger(), "CHANGED STATE");
 }
+
 bool
-AvoidObstacleNode::check_forward_2_back()
+AvoidObstacleNode::check_ready_2_forward()
+{
+  return last_button_event_ != nullptr;
+}
+
+bool
+AvoidObstacleNode::check_forward_2_yaw()
 {
   // going forward when deteting an obstacle
   // at 1 meters with the front laser read
@@ -133,14 +199,31 @@ AvoidObstacleNode::check_stop_2_forward()
   auto elapsed = now() - rclcpp::Time(last_scan_->header.stamp);
   return elapsed < SCAN_TIMEOUT;
 }
-bool
-AvoidObstacleNode::check_turn_2_forward()
-{
-  //RCLCPP_INFO(get_logger(), "CHECK_TURN_2_FORWARD");
 
-  //RCLCPP_INFO(get_logger(), "time %.2f.%ld", now().seconds(), now().nanoseconds());
-  
-  // Turning for 2 seconds
-  return (now() - state_ts_ ) > TURNING_TIME;
+bool
+AvoidObstacleNode::check_yaw_2_dodge()
+{
+  // Turning for 7.5 seconds
+  return (now() - state_ts_ ) > YAW_TIME;
 }
+
+bool
+AvoidObstacleNode::check_dodge_2_yaw_new_obstacle()
+{
+  return check_forward_2_yaw();
 }
+
+bool
+AvoidObstacleNode::check_dodge_2_yaw_out()
+{
+  // Turning for 10 seconds
+  return (now() - state_ts_ ) > DODGE_TIME;
+}
+
+bool
+AvoidObstacleNode::check_yaw_out_2_forward()
+{
+  return check_yaw_2_dodge();
+}
+
+} // namespace avoid_obstacle_cpp

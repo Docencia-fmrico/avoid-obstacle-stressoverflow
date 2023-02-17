@@ -1,0 +1,8 @@
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In member function ‘[01m[Kvoid avoid_obstacle_cpp::AvoidObstacleNode::control_cycle()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:101:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLCPP_IN[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO[m[K’?
+  101 |         [01;31m[KRCLCPP_IN[m[K((now() - state_ts_ ) > TURNING_TIME)FO(get_logger(), "FORWARD -> STOP");
+      |         [01;31m[K^~~~~~~~~[m[K
+      |         [32m[KRCLCPP_INFO[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -20,6 +20,7 @@ include_directories(include)
 
 add_executable(avoidObstacle
   src/avoid_obstacle_cpp/AvoidObstacleNode.cpp
+  src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp
   src/avoidObstacle_main.cpp
 )
 ament_target_dependencies(avoidObstacle ${dependencies})

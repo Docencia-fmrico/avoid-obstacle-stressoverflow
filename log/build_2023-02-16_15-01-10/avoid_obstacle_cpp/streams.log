@@ -1,0 +1,79 @@
+[0.025s] Invoking command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp
+[0.138s] -- The C compiler identification is GNU 11.3.0
+[0.218s] -- The CXX compiler identification is GNU 11.3.0
+[0.230s] -- Detecting C compiler ABI info
+[0.338s] -- Detecting C compiler ABI info - done
+[0.347s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.347s] -- Detecting C compile features
+[0.347s] -- Detecting C compile features - done
+[0.351s] -- Detecting CXX compiler ABI info
+[0.478s] -- Detecting CXX compiler ABI info - done
+[0.496s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.496s] -- Detecting CXX compile features
+[0.497s] -- Detecting CXX compile features - done
+[0.528s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.800s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[0.870s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.110s] -- Found rclcpp: 16.0.3 (/opt/ros/humble/share/rclcpp/cmake)
+[1.347s] -- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.379s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.415s] -- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.467s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.542s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.735s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.759s] -- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.999s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.049s] -- Found FastRTPS: /opt/ros/humble/include  
+[2.133s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.182s] -- Looking for pthread.h
+[2.296s] -- Looking for pthread.h - found
+[2.296s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.405s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.406s] -- Found Threads: TRUE  
+[2.673s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.827s] -- Found kobuki_ros_interfaces: 1.0.0 (/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/kobuki_ros_interfaces/share/kobuki_ros_interfaces/cmake)
+[3.078s] -- Found ament_lint_auto: 0.12.5 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.297s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.313s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.313s] -- Configured cppcheck include dirs: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/include
+[3.313s] -- Configured cppcheck exclude dirs and/or files: 
+[3.326s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.326s] -- Configured cpplint exclude dirs and/or files: 
+[3.330s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.337s] -- Added test 'lint_cmake' to check CMake code style
+[3.342s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.356s] -- Added test 'uncrustify' to check C / C++ code style
+[3.356s] -- Configured uncrustify additional arguments: 
+[3.360s] -- Added test 'xmllint' to check XML markup files
+[3.367s] -- Configuring done
+[3.380s] -- Generating done
+[3.382s] -- Build files have been written to: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+[3.394s] Invoked command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp
+[3.395s] Invoking command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j8 -l8
+[3.486s] [ 33%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o[0m
+[3.486s] [ 66%] [32mBuilding CXX object CMakeFiles/avoidObstacle.dir/src/avoidObstacle_main.cpp.o[0m
+[11.089s] [100%] [32m[1mLinking CXX executable avoidObstacle[0m
+[11.528s] [100%] Built target avoidObstacle
+[11.545s] Invoked command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --build /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp -- -j8 -l8
+[11.634s] Invoking command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp
+[11.648s] -- Install configuration: ""
+[11.648s] -- Execute custom install script
+[11.649s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/lib/avoid_obstacle_cpp/avoidObstacle
+[11.665s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/avoid_obstacle.launch.py
+[11.682s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/launch/kobuki.launch.py
+[11.696s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/package_run_dependencies/avoid_obstacle_cpp
+[11.712s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/parent_prefix_path/avoid_obstacle_cpp
+[11.726s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.sh
+[11.741s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/ament_prefix_path.dsv
+[11.756s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.sh
+[11.773s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/environment/path.dsv
+[11.788s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.bash
+[11.803s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.sh
+[11.817s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.zsh
+[11.832s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/local_setup.dsv
+[11.847s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.dsv
+[11.863s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/ament_index/resource_index/packages/avoid_obstacle_cpp
+[11.878s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig.cmake
+[11.893s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/cmake/avoid_obstacle_cppConfig-version.cmake
+[11.908s] -- Symlinking: /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/install/avoid_obstacle_cpp/share/avoid_obstacle_cpp/package.xml
+[11.925s] Invoked command in '/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/joy_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/nav2_simple_commander:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/mouse_teleop:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/launch_pal:/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/install/key_teleop:/opt/ros/humble /usr/bin/cmake --install /home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp

@@ -1,0 +1,12 @@
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:[m[K In member function ‘[01m[Kvoid avoid_obstacle_cpp::AvoidObstacleNode::control_cycle()[m[K’:
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:82:35:[m[K [01;31m[Kerror: [m[K‘[01m[Ksound[m[K’ is not a member of ‘[01m[Kkobuki_ros_interfaces::msg[m[K’; did you mean ‘[01m[KSound[m[K’?
+   82 |       kobuki_ros_interfaces::msg::[01;31m[Ksound[m[K sound = kobuki_ros_interfaces::msg::sound::ON;
+      |                                   [01;31m[K^~~~~[m[K
+      |                                   [32m[KSound[m[K
+[01m[K/home/dgarcu/Documents/URJC-Work/2022-2023/arquitectura-software-2023/practicas/intro_ws/src/avoid-obstacle-stressoverflow/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp:83:27:[m[K [01;31m[Kerror: [m[K‘[01m[Ksound[m[K’ was not declared in this scope; did you mean ‘[01m[Kround[m[K’?
+   83 |       sound_pub_->publish([01;31m[Ksound[m[K);
+      |                           [01;31m[K^~~~~[m[K
+      |                           [32m[Kround[m[K
+gmake[2]: *** [CMakeFiles/avoidObstacle.dir/build.make:76: CMakeFiles/avoidObstacle.dir/src/avoid_obstacle_cpp/AvoidObstacleNode.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/avoidObstacle.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
