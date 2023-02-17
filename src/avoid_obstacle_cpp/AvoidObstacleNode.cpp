@@ -70,7 +70,6 @@ AvoidObstacleNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 void
 AvoidObstacleNode::bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg) // comprobar que sea asi
 {
-  RCLCPP_INFO(get_logger(), "CRASH!");
   last_bumper_event_ = std::move(msg);
 }
 
