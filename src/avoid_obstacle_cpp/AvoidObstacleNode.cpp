@@ -85,101 +85,83 @@ AvoidObstacleNode::control_cycle()
 
   switch (state_) {
     case READY:
-      out_led.value = kobuki_ros_interfaces::msg::Led::ORANGE;
-      led_pub_->publish(out_led);
+      out_vel.linear.x = 0;
+      out_vel.angular.z = 0;
 
-      if (!check_ready_2_forward()) {
-        break;
+      if (check_ready_2_forward()) {
+        RCLCPP_INFO(get_logger(), "READY -> FORWARD");
+        go_state(FORWARD);
       }
-
-      RCLCPP_INFO(get_logger(), "STARTING...");
-
-      out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
-      out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
-
-      sound_pub_->publish(out_sound);
-      led_pub_->publish(out_led);
-
-      RCLCPP_INFO(get_logger(), "READY -> FORWARD");
-      go_state(FORWARD);
-
       break;
     case FORWARD:
       out_vel.linear.x = SPEED_LINEAR;
 
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
       if (check_forward_2_stop()) {
         RCLCPP_INFO(get_logger(), "FORWARD -> STOP");
         go_state(STOP);
       }
-
-      if (check_forward_2_yaw()) {
-        out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
-        sound_pub_->publish(out_sound);
-        RCLCPP_INFO(get_logger(), "FORWARD -> YAW TURN");
+      if (check_forward_2_yaw_in()) {
+        RCLCPP_INFO(get_logger(), "FORWARD -> YAW TURN IN");
         go_state(YAW_TURN_IN);
-      }
-      if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
-        go_state(EMERGENCY_STOP);
       }
       break;
     case BACK:
       out_vel.linear.x = -SPEED_LINEAR;
 
       if (check_back_2_yaw_turn_in()) {
-        out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
-        led_pub_->publish(out_led);
+        RCLCPP_INFO(get_logger(), "BACK -> YAW TURN IN");
         go_state(YAW_TURN_IN);
       }
       break;
     case YAW_TURN_IN:
       out_vel.angular.z = SPEED_ANGULAR;
-      if (check_yaw_2_dodge()) {
-        RCLCPP_INFO(get_logger(), "YAW TURN -> DODGE TURN");
-        go_state(DODGE_TURN);
-      }
+
       if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        RCLCPP_INFO(get_logger(), "YAW TURN IN -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
+      }
+      if (check_yaw_2_dodge()) {
+        RCLCPP_INFO(get_logger(), "YAW TURN IN -> DODGE TURN");
+        go_state(DODGE_TURN);
       }
       break;
     case DODGE_TURN:
       out_vel.angular.z = -SPEED_ANGULAR*0.75;
       out_vel.linear.x = SPEED_LINEAR;
 
-      if (check_dodge_2_yaw_new_obstacle()) {
-        out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
-        sound_pub_->publish(out_sound);
-        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN IN");
-        go_state(YAW_TURN_IN);
-      }
-
-      if (check_dodge_2_yaw_out()) {
-        out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
-        sound_pub_->publish(out_sound);
-        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN OUT");
-        go_state(YAW_TURN_OUT);
-      }
-
       if (check_any_2_emergency_stop()) {
         RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
       }
-
+      if (check_dodge_2_yaw_new_obstacle()) {
+        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN IN");
+        go_state(YAW_TURN_IN);
+      }
+      if (check_dodge_2_yaw_out()) {
+        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN OUT");
+        go_state(YAW_TURN_OUT);
+      }
       break;
     case YAW_TURN_OUT:
       out_vel.angular.z = SPEED_ANGULAR;
+
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_INFO(get_logger(), "YAW TURN OUT -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
       if (check_yaw_out_2_forward()) {
         RCLCPP_INFO(get_logger(), "YAW TURN OUT -> FORWARD");
         go_state(FORWARD);
       }
-
-      if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
-        go_state(EMERGENCY_STOP);
-      }
       break;
     case STOP:
+      out_vel.linear.x = 0;
+      out_vel.angular.z = 0;
+
       if (check_stop_2_forward()) {
         RCLCPP_INFO(get_logger(), "STOP -> FORWARD");
         go_state(FORWARD);
@@ -188,11 +170,8 @@ AvoidObstacleNode::control_cycle()
     case EMERGENCY_STOP:
       out_vel.linear.x = 0;
       out_vel.angular.z = 0;
+
       if (check_emergency_2_back()) {
-        out_led.value = kobuki_ros_interfaces::msg::Led::RED;
-        led_pub_->publish(out_led);
-        out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
-        sound_pub_->publish(out_sound);
         last_bumper_event_ = nullptr;
         RCLCPP_INFO(get_logger(), "EMERGENCY STOP -> BACK");
         go_state(BACK);
@@ -207,8 +186,72 @@ void
 AvoidObstacleNode::go_state(int new_state)
 {
   state_ = new_state;
+  manage_user_feedback(new_state);
   state_ts_ = now();
   RCLCPP_INFO(get_logger(), "CHANGED STATE");
+}
+
+void
+AvoidObstacleNode::manage_user_feedback(int new_state)
+{
+  change_status_led(new_state);
+  change_status_sound(new_state);
+}
+
+void
+AvoidObstacleNode::change_status_led(int new_state)
+{
+  kobuki_ros_interfaces::msg::Led out_led;
+
+  switch (new_state)
+  {
+    case READY:
+      out_led.value = kobuki_ros_interfaces::msg::Led::ORANGE;
+      break;
+    case BACK:
+    case STOP:
+    case EMERGENCY_STOP:
+      out_led.value = kobuki_ros_interfaces::msg::Led::RED;
+      break;
+    case FORWARD:
+    case YAW_TURN_IN:
+    case YAW_TURN_OUT:
+    case DODGE_TURN:
+      out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
+      break;
+    
+    default:
+      return;
+  }
+
+  led_pub_->publish(out_led);
+}
+
+void
+AvoidObstacleNode::change_status_sound(int new_state)
+{
+  kobuki_ros_interfaces::msg::Sound out_sound;
+
+  switch (new_state)
+  {
+    case READY:
+    case FORWARD:
+    case YAW_TURN_IN:
+    case YAW_TURN_OUT:
+    case DODGE_TURN:
+      out_sound.value = kobuki_ros_interfaces::msg::Sound::ON;
+      break;
+    case BACK:
+    case STOP:
+    case EMERGENCY_STOP:
+      out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
+      break;
+    
+    default:
+      return;
+  }
+
+  sound_pub_->publish(out_sound);
 }
 
 bool
@@ -218,7 +261,7 @@ AvoidObstacleNode::check_ready_2_forward()
 }
 
 bool
-AvoidObstacleNode::check_forward_2_yaw()
+AvoidObstacleNode::check_forward_2_yaw_in()
 {
   // going forward when deteting an obstacle
   // at 1 meters with the front laser read
@@ -253,7 +296,7 @@ AvoidObstacleNode::check_yaw_2_dodge()
 bool
 AvoidObstacleNode::check_dodge_2_yaw_new_obstacle()
 {
-  return check_forward_2_yaw();
+  return check_forward_2_yaw_in();
 }
 
 bool

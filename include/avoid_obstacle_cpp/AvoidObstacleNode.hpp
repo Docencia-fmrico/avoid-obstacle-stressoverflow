@@ -52,8 +52,11 @@ private:
   rclcpp::Time state_ts_;
 
   void go_state(int new_state);
+  void manage_user_feedback(int new_state);
+  void change_status_led(int new_state);
+  void change_status_sound(int new_state);
   bool check_ready_2_forward();
-  bool check_forward_2_yaw();
+  bool check_forward_2_yaw_in();
   bool check_forward_2_stop();
   bool check_stop_2_forward();
   bool check_yaw_2_dodge();
