@@ -1,0 +1,13 @@
+lidar_led_feedback:
+  ros__parameters:
+    obstacle_distance: 1.0
+
+avoid_obstacle:
+  ros__parameters:
+    yaw_time: 7.5
+    back_time: 2.5
+    dodge_time: 20.0
+    scan_timeout: 1.0
+    speed_linear: 0.1
+    speed_angular: 0.3
+    obstacle_distance: 1.0

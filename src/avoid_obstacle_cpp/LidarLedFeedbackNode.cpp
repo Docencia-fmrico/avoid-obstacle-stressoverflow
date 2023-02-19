@@ -37,6 +37,9 @@ LidarLedFeedbackNode::LidarLedFeedbackNode()
   led_pub_ = create_publisher<kobuki_ros_interfaces::msg::Led>("lidar_led", 10);
   timer_ = create_wall_timer(50ms, std::bind(&LidarLedFeedbackNode::control_cycle, this));
 
+  declare_parameter<float>("obstacle_distance", 1.0f);
+
+  get_parameter("obstacle_distance", obstacle_distance_);
 }
 void
 LidarLedFeedbackNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
@@ -59,7 +62,7 @@ LidarLedFeedbackNode::control_cycle()
 
   size_t pos = 0;
 
-  if (last_scan_->ranges[pos] < OBSTACLE_DISTANCE) {
+  if (last_scan_->ranges[pos] < obstacle_distance_) {
     out_led.value = kobuki_ros_interfaces::msg::Led::RED;
   } else {
     out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;

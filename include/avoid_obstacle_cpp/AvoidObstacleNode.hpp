@@ -40,6 +40,7 @@ private:
   void bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg);
   void control_cycle();
 
+  static const int INNIT = 0;
   static const int READY = 1;
   static const int FORWARD = 2;
   static const int BACK = 3;
@@ -56,28 +57,25 @@ private:
   void change_status_led(int new_state);
   void change_status_sound(int new_state);
   bool check_ready_2_forward();
-  bool check_forward_2_yaw_in();
+  bool check_forward_2_yaw_turn_in();
   bool check_forward_2_stop();
   bool check_stop_2_forward();
-  bool check_yaw_2_dodge();
+  bool check_yaw_turn_in_2_dodge_turn();
   bool check_dodge_2_yaw_new_obstacle();
-  bool check_dodge_2_yaw_out();
-  bool check_yaw_out_2_forward();
+  bool check_dodge_2_yaw_turn_out();
+  bool check_yaw_turn_out_2_forward();
   bool check_any_2_emergency_stop();
   bool check_emergency_2_back();
   bool check_back_2_yaw_turn_in();
 
-  const rclcpp::Duration YAW_TIME {7.5s};
-  const rclcpp::Duration BACK_TIME {2.5s};
-  const rclcpp::Duration DODGE_TIME {20s};
-  const rclcpp::Duration SCAN_TIMEOUT {1s};
+  double yaw_time_;
+  double back_time_;
+  double dodge_time_;
+  double scan_timeout_;
 
-  kobuki_ros_interfaces::msg::Sound out_sound;
-  kobuki_ros_interfaces::msg::Led out_led;
-
-  static constexpr float SPEED_LINEAR = 0.1f;
-  static constexpr float SPEED_ANGULAR = 0.3f;
-  static constexpr float OBSTACLE_DISTANCE = 1.0f;
+  float speed_linear_;
+  float speed_angular_;
+  float obstacle_distance_;
 
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
   rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
