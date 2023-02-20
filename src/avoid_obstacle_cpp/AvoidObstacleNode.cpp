@@ -20,7 +20,7 @@
 #include "geometry_msgs/msg/twist.hpp"
 #include "kobuki_ros_interfaces/msg/button_event.hpp"
 #include "kobuki_ros_interfaces/msg/bumper_event.hpp"
-// #include "kobuki_ros_interfaces/msg/wheel_drop_event.hpp"
+#include "kobuki_ros_interfaces/msg/wheel_drop_event.hpp"
 #include "kobuki_ros_interfaces/msg/led.hpp"
 #include "kobuki_ros_interfaces/msg/sound.hpp"
 #include "rclcpp/rclcpp.hpp"
@@ -35,25 +35,6 @@ AvoidObstacleNode::AvoidObstacleNode()
 : Node("avoid_obstacle"),
   state_(INNIT)
 {
-  button_sub_ = create_subscription<kobuki_ros_interfaces::msg::ButtonEvent>(
-    "input_button", rclcpp::SensorDataQoS(),
-    std::bind(&AvoidObstacleNode::button_callback, this, _1));
-
-  scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
-    "input_scan", rclcpp::SensorDataQoS(),
-    std::bind(&AvoidObstacleNode::scan_callback, this, _1));
-
-  bumper_sub_ = create_subscription<kobuki_ros_interfaces::msg::BumperEvent>(
-    "input_bumper", rclcpp::SensorDataQoS(),
-    std::bind(&AvoidObstacleNode::bumper_callback, this, _1));
-
-  led_pub_ = create_publisher<kobuki_ros_interfaces::msg::Led>("status_led", 10);
-  sound_pub_ = create_publisher<kobuki_ros_interfaces::msg::Sound>("output_sound", 10);
-  vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("output_vel", 10);
-  timer_ = create_wall_timer(25ms, std::bind(&AvoidObstacleNode::control_cycle, this));
-
-  state_ts_ = now();
-
   declare_parameter<double>("yaw_time", 7.5);
   declare_parameter<double>("back_time", 2.5);
   declare_parameter<double>("dodge_time", 20);
@@ -63,6 +44,9 @@ AvoidObstacleNode::AvoidObstacleNode()
   declare_parameter<float>("speed_angular", 0.3f);
   declare_parameter<float>("obstacle_distance", 1.0f);
 
+  declare_parameter<float>("speed_linear_factor", 0.75f);
+  declare_parameter<float>("speed_angular_factor", 0.75f);
+
   get_parameter("yaw_time", yaw_time_);
   get_parameter("back_time", back_time_);
   get_parameter("dodge_time", dodge_time_);
@@ -71,12 +55,33 @@ AvoidObstacleNode::AvoidObstacleNode()
   get_parameter("speed_linear", speed_linear_);
   get_parameter("speed_angular", speed_angular_);
   get_parameter("obstacle_distance", obstacle_distance_);
-}
 
-void
-AvoidObstacleNode::button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg)
-{
-  last_button_event_ = std::move(msg);
+  get_parameter("speed_linear_factor", speed_linear_factor_);
+  get_parameter("speed_angular_factor", speed_angular_factor_);
+
+  vel_pub_ = create_publisher<geometry_msgs::msg::Twist>("output_vel", 10);
+  led_pub_ = create_publisher<kobuki_ros_interfaces::msg::Led>("status_led", 10);
+  sound_pub_ = create_publisher<kobuki_ros_interfaces::msg::Sound>("output_sound", 10);
+
+  scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
+    "input_scan", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::scan_callback, this, _1));
+
+  button_sub_ = create_subscription<kobuki_ros_interfaces::msg::ButtonEvent>(
+    "input_button", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::button_callback, this, _1));
+
+  bumper_sub_ = create_subscription<kobuki_ros_interfaces::msg::BumperEvent>(
+    "input_bumper", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::bumper_callback, this, _1));
+
+  wheel_drop_sub_ = create_subscription<kobuki_ros_interfaces::msg::WheelDropEvent>(
+    "input_wheel_drop", rclcpp::SensorDataQoS(),
+    std::bind(&AvoidObstacleNode::wheel_drop_callback, this, _1));
+
+  timer_ = create_wall_timer(25ms, std::bind(&AvoidObstacleNode::control_cycle, this));
+
+  state_ts_ = now();
 }
 
 void
@@ -86,10 +91,23 @@ AvoidObstacleNode::scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 }
 
 void
+AvoidObstacleNode::button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg)
+{
+  last_button_event_ = std::move(msg);
+}
+
+void
 AvoidObstacleNode::bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg)
 {
   last_bumper_event_ = std::move(msg);
 }
+
+void
+AvoidObstacleNode::wheel_drop_callback(kobuki_ros_interfaces::msg::WheelDropEvent::UniquePtr msg)
+{
+  last_wheel_drop_event_ = std::move(msg);
+}
+
 
 void
 AvoidObstacleNode::control_cycle()
@@ -108,7 +126,8 @@ AvoidObstacleNode::control_cycle()
       out_vel.linear.x = 0;
       out_vel.angular.z = 0;
 
-      RCLCPP_INFO(get_logger(), "INNIT -> READY");
+      RCLCPP_DEBUG(get_logger(), "INNIT -> READY");
+      log_parameters();
       go_state(READY);
       break;
     case READY:
@@ -116,8 +135,7 @@ AvoidObstacleNode::control_cycle()
       out_vel.angular.z = 0;
 
       if (check_ready_2_forward()) {
-        last_button_event_ = nullptr;
-        RCLCPP_INFO(get_logger(), "READY -> FORWARD");
+        RCLCPP_DEBUG(get_logger(), "READY -> FORWARD");
         go_state(FORWARD);
       }
       break;
@@ -125,23 +143,27 @@ AvoidObstacleNode::control_cycle()
       out_vel.linear.x = speed_linear_;
 
       if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        RCLCPP_DEBUG(get_logger(), "FORWARD -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
       }
       if (check_forward_2_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> STOP");
+        RCLCPP_DEBUG(get_logger(), "FORWARD -> STOP");
         go_state(STOP);
       }
       if (check_forward_2_yaw_turn_in()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> YAW TURN IN");
+        RCLCPP_DEBUG(get_logger(), "FORWARD -> YAW TURN IN");
         go_state(YAW_TURN_IN);
       }
       break;
     case BACK:
       out_vel.linear.x = -speed_linear_;
 
+      if (check_any_2_emergency_stop()) {
+        RCLCPP_DEBUG(get_logger(), "BACK -> EMERGENCY STOP");
+        go_state(EMERGENCY_STOP);
+      }
       if (check_back_2_yaw_turn_in()) {
-        RCLCPP_INFO(get_logger(), "BACK -> YAW TURN IN");
+        RCLCPP_DEBUG(get_logger(), "BACK -> YAW TURN IN");
         go_state(YAW_TURN_IN);
       }
       break;
@@ -149,28 +171,28 @@ AvoidObstacleNode::control_cycle()
       out_vel.angular.z = speed_angular_;
 
       if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "YAW TURN IN -> EMERGENCY STOP");
+        RCLCPP_DEBUG(get_logger(), "YAW TURN IN -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
       }
       if (check_yaw_turn_in_2_dodge_turn()) {
-        RCLCPP_INFO(get_logger(), "YAW TURN IN -> DODGE TURN");
+        RCLCPP_DEBUG(get_logger(), "YAW TURN IN -> DODGE TURN");
         go_state(DODGE_TURN);
       }
       break;
     case DODGE_TURN:
-      out_vel.angular.z = -speed_angular_*0.75;
-      out_vel.linear.x = speed_linear_;
+      out_vel.angular.z = -speed_angular_ * speed_angular_factor_;
+      out_vel.linear.x = speed_linear_ * speed_linear_factor_;
 
       if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "FORWARD -> EMERGENCY STOP");
+        RCLCPP_DEBUG(get_logger(), "FORWARD -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
       }
       if (check_dodge_2_yaw_new_obstacle()) {
-        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN IN");
+        RCLCPP_DEBUG(get_logger(), "DODGE TURN -> YAW TURN IN");
         go_state(YAW_TURN_IN);
       }
       if (check_dodge_2_yaw_turn_out()) {
-        RCLCPP_INFO(get_logger(), "DODGE TURN -> YAW TURN OUT");
+        RCLCPP_DEBUG(get_logger(), "DODGE TURN -> YAW TURN OUT");
         go_state(YAW_TURN_OUT);
       }
       break;
@@ -178,11 +200,11 @@ AvoidObstacleNode::control_cycle()
       out_vel.angular.z = speed_angular_;
 
       if (check_any_2_emergency_stop()) {
-        RCLCPP_INFO(get_logger(), "YAW TURN OUT -> EMERGENCY STOP");
+        RCLCPP_DEBUG(get_logger(), "YAW TURN OUT -> EMERGENCY STOP");
         go_state(EMERGENCY_STOP);
       }
       if (check_yaw_turn_out_2_forward()) {
-        RCLCPP_INFO(get_logger(), "YAW TURN OUT -> FORWARD");
+        RCLCPP_DEBUG(get_logger(), "YAW TURN OUT -> FORWARD");
         go_state(FORWARD);
       }
       break;
@@ -191,7 +213,7 @@ AvoidObstacleNode::control_cycle()
       out_vel.angular.z = 0;
 
       if (check_stop_2_forward()) {
-        RCLCPP_INFO(get_logger(), "STOP -> FORWARD");
+        RCLCPP_DEBUG(get_logger(), "STOP -> FORWARD");
         go_state(FORWARD);
       }
       break;
@@ -200,9 +222,14 @@ AvoidObstacleNode::control_cycle()
       out_vel.angular.z = 0;
 
       if (check_emergency_2_back()) {
-        last_bumper_event_ = nullptr;
-        RCLCPP_INFO(get_logger(), "EMERGENCY STOP -> BACK");
+        clean_emergencies();
+        RCLCPP_DEBUG(get_logger(), "EMERGENCY STOP -> BACK");
         go_state(BACK);
+      }
+      if (check_emergency_2_ready()) {
+        clean_emergencies();
+        RCLCPP_DEBUG(get_logger(), "EMERGENCY STOP -> READY");
+        go_state(READY);
       }
       break;
   }
@@ -211,12 +238,37 @@ AvoidObstacleNode::control_cycle()
 }
 
 void
+AvoidObstacleNode::log_parameters()
+{
+  RCLCPP_INFO(get_logger(), "PARAMETERS FOR THIS RUN");
+
+  RCLCPP_INFO(get_logger(), "Yaw time: %f s", yaw_time_);
+  RCLCPP_INFO(get_logger(), "Back time: %f s", back_time_);
+  RCLCPP_INFO(get_logger(), "Dodge time: %f s", dodge_time_);
+  RCLCPP_INFO(get_logger(), "Scan timeout: %f s", scan_timeout_);
+
+  RCLCPP_INFO(get_logger(), "Linear speed: %f m/s", speed_linear_);
+  RCLCPP_INFO(get_logger(), "Angular speed: %f m/s", speed_angular_);
+  RCLCPP_INFO(get_logger(), "Obstacle distance: %f m", obstacle_distance_);
+
+  RCLCPP_INFO(get_logger(), "Linear speed factor: %f", speed_linear_factor_);
+  RCLCPP_INFO(get_logger(), "Angular speed factor: %f", speed_angular_factor_);
+}
+
+void
+AvoidObstacleNode::clean_emergencies()
+{
+  last_bumper_event_ = nullptr;
+  last_wheel_drop_event_ = nullptr;
+}
+
+void
 AvoidObstacleNode::go_state(int new_state)
 {
   state_ = new_state;
   manage_user_feedback(new_state);
   state_ts_ = now();
-  RCLCPP_INFO(get_logger(), "CHANGED STATE");
+  RCLCPP_DEBUG(get_logger(), "CHANGED STATE");
 }
 
 void
@@ -230,6 +282,14 @@ void
 AvoidObstacleNode::change_status_led(int new_state)
 {
   kobuki_ros_interfaces::msg::Led out_led;
+
+  /*
+   * The message is manipulated depending on the state that is 
+   * parsed. Some of them could have the same output, and thus the order matters.
+   * This order may differ on the numerical order they have been defined.
+   * 
+   * Then, whatever message was built, it is published.
+   */
 
   switch (new_state)
   {
@@ -247,7 +307,11 @@ AvoidObstacleNode::change_status_led(int new_state)
     case DODGE_TURN:
       out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
       break;
-    
+    /*
+     * There may be cases in which you do not want to update
+     * anything, so the method will return without publish anything.
+     * Any other case should be contemplated on the switch statement.
+     */
     default:
       return;
   }
@@ -259,6 +323,14 @@ void
 AvoidObstacleNode::change_status_sound(int new_state)
 {
   kobuki_ros_interfaces::msg::Sound out_sound;
+
+  /*
+   * The message is manipulated depending on the state that is 
+   * parsed. Some of them could have the same output, and thus the order matters.
+   * This order may differ on the numerical order they have been defined.
+   * 
+   * Then, whatever message was built, it is published.
+   */
 
   switch (new_state)
   {
@@ -272,9 +344,13 @@ AvoidObstacleNode::change_status_sound(int new_state)
     case BACK:
     case STOP:
     case EMERGENCY_STOP:
-      out_sound.value = kobuki_ros_interfaces::msg::Sound::RECHARGE;
+      out_sound.value = kobuki_ros_interfaces::msg::Sound::OFF;
       break;
-    
+    /*
+     * There may be cases in which you do not want to update
+     * anything, so the method will return without publish anything.
+     * Any other case should be contemplated on the switch statement.
+     */
     default:
       return;
   }
@@ -285,13 +361,18 @@ AvoidObstacleNode::change_status_sound(int new_state)
 bool
 AvoidObstacleNode::check_ready_2_forward()
 {
-  return last_button_event_ != nullptr;
+  if (last_button_event_ == nullptr) { return false; }
+
+  return last_button_event_->state; 
 }
 
 bool
 AvoidObstacleNode::check_forward_2_yaw_turn_in()
 {
+  if (last_scan_ == nullptr) { return false; }
+
   size_t pos = 0;
+
   return last_scan_->ranges[pos] < obstacle_distance_;
 }
 
@@ -299,7 +380,7 @@ bool
 AvoidObstacleNode::check_forward_2_stop()
 {
   /* 
-   * Stop if no sensor readings for 1 second
+   * Stop if no sensor readings in a given timeout.
    */
   auto elapsed = now() - rclcpp::Time(last_scan_->header.stamp);
   return elapsed > rclcpp::Duration::from_seconds(scan_timeout_);
@@ -309,7 +390,7 @@ bool
 AvoidObstacleNode::check_stop_2_forward()
 {
   /* 
-   * Going forward if sensor readings are available again
+   * Going forward if sensor readings are available again.
    */
   auto elapsed = now() - rclcpp::Time(last_scan_->header.stamp);
   return elapsed < rclcpp::Duration::from_seconds(scan_timeout_);
@@ -324,6 +405,11 @@ AvoidObstacleNode::check_yaw_turn_in_2_dodge_turn()
 bool
 AvoidObstacleNode::check_dodge_2_yaw_new_obstacle()
 {
+  /*
+   * A new obstacle while dodging is nothing but the same 
+   * check procedure of a conventional obstacle. Thus the call to avoid
+   * code duplication.
+   */
   return check_forward_2_yaw_turn_in();
 }
 
@@ -336,19 +422,61 @@ AvoidObstacleNode::check_dodge_2_yaw_turn_out()
 bool
 AvoidObstacleNode::check_yaw_turn_out_2_forward()
 {
+  /*
+   * The yaw time in the "in" turn is the same as in the "out" turn,
+   * and thus the call to avoid code duplication.
+   */
   return check_yaw_turn_in_2_dodge_turn();
 }
 
 bool
 AvoidObstacleNode::check_any_2_emergency_stop()
 {
-  return last_bumper_event_ != nullptr;
+  /*
+   * Before handling the emergency, the first step is to detect any.
+   * But sometimes one of them could happen without the other.
+   * So every possible emergency is tested and stored in a variable
+   * before returned.
+   * 
+   * Once only one emergency is true, it is inmediately returned to be handled.
+   */
+  bool result = false;
+
+  if (last_bumper_event_ != nullptr) { result = last_bumper_event_->state; }
+
+  if (result) return true;
+  
+  if (last_wheel_drop_event_ != nullptr) { result = last_wheel_drop_event_->state; };
+
+  return result;
+}
+
+bool
+AvoidObstacleNode::check_emergency_2_ready()
+{
+  if (last_wheel_drop_event_ == nullptr) { return false; };
+
+  return !last_wheel_drop_event_->state;
 }
 
 bool
 AvoidObstacleNode::check_emergency_2_back()
 {
-  return last_bumper_event_ == nullptr;
+  if (last_bumper_event_ == nullptr) { return false; };
+  /*
+   * The following line must be added since the emergency could be a wheel drop,
+   * however with the robot in the air, if the bumper is pressed, the robot returns
+   * to the behaviour tree as usual.
+   * 
+   * With a few emergency states this is no problem, but maybe when a lot of them could be
+   * possible, a better aproach could be to raise a 'code' where every resume procedure
+   * will check BEFORE attempting to clean an emergency caused by another procedure.
+   * 
+   * For future versions.
+   */
+  if (last_wheel_drop_event_ != nullptr && last_wheel_drop_event_->state) { return false; }
+
+  return last_bumper_event_->state;
 }
 
 bool

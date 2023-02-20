@@ -35,10 +35,26 @@ public:
   AvoidObstacleNode();
 
 private:
-  void button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg);
-  void scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg);
-  void bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg);
-  void control_cycle();
+  double yaw_time_;
+  double back_time_;
+  double dodge_time_;
+  double scan_timeout_;
+
+  float speed_linear_;
+  float speed_angular_;
+  float obstacle_distance_;
+
+  float speed_linear_factor_;
+  float speed_angular_factor_;
+
+  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
+  rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_pub_;
+  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
+  rclcpp::Subscription<kobuki_ros_interfaces::msg::ButtonEvent>::SharedPtr button_sub_;
+  rclcpp::Subscription<kobuki_ros_interfaces::msg::BumperEvent>::SharedPtr bumper_sub_;
+  rclcpp::Subscription<kobuki_ros_interfaces::msg::WheelDropEvent>::SharedPtr wheel_drop_sub_;
+  rclcpp::TimerBase::SharedPtr timer_;
 
   static const int INNIT = 0;
   static const int READY = 1;
@@ -52,6 +68,19 @@ private:
   int state_;
   rclcpp::Time state_ts_;
 
+  sensor_msgs::msg::LaserScan::UniquePtr last_scan_;
+  kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr last_button_event_;
+  kobuki_ros_interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
+  kobuki_ros_interfaces::msg::WheelDropEvent::UniquePtr last_wheel_drop_event_;
+
+  void scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg);
+  void button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg);
+  void bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg);
+  void wheel_drop_callback(kobuki_ros_interfaces::msg::WheelDropEvent::UniquePtr msg);
+  void control_cycle();
+
+  void log_parameters();
+  void clean_emergencies();
   void go_state(int new_state);
   void manage_user_feedback(int new_state);
   void change_status_led(int new_state);
@@ -65,29 +94,10 @@ private:
   bool check_dodge_2_yaw_turn_out();
   bool check_yaw_turn_out_2_forward();
   bool check_any_2_emergency_stop();
+  bool check_emergency_2_ready();
   bool check_emergency_2_back();
   bool check_back_2_yaw_turn_in();
 
-  double yaw_time_;
-  double back_time_;
-  double dodge_time_;
-  double scan_timeout_;
-
-  float speed_linear_;
-  float speed_angular_;
-  float obstacle_distance_;
-
-  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
-  rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
-  rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_pub_;
-  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
-  rclcpp::Subscription<kobuki_ros_interfaces::msg::ButtonEvent>::SharedPtr button_sub_;
-  rclcpp::Subscription<kobuki_ros_interfaces::msg::BumperEvent>::SharedPtr bumper_sub_;
-  rclcpp::TimerBase::SharedPtr timer_;
-
-  sensor_msgs::msg::LaserScan::UniquePtr last_scan_;
-  kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr last_button_event_;
-  kobuki_ros_interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
 };
 
 }  // namespace avoid_obstacle_cpp
