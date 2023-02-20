@@ -30,7 +30,8 @@ int main(int argc, char * argv[])
   executor.add_node(avoidObstacle_node);
   executor.add_node(lidarLedFeedback_node);
 
-  RCLCPP_INFO(avoidObstacle_node->get_logger(), "Init Avoid Obstacle");
+  RCLCPP_INFO(avoidObstacle_node->get_logger(), "Init Avoid Obstacle Node");
+  RCLCPP_INFO(lidarLedFeedback_node->get_logger(), "Init Lidar Led Feedback Node");
 
   executor.spin();
 
