@@ -37,8 +37,10 @@ public:
 private:
   void button_callback(kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr msg);
   void scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg);
+  void bumper_callback(kobuki_ros_interfaces::msg::BumperEvent::UniquePtr msg);
   void control_cycle();
 
+  static const int INNIT = 0;
   static const int READY = 1;
   static const int FORWARD = 2;
   static const int BACK = 3;
@@ -46,39 +48,46 @@ private:
   static const int YAW_TURN_OUT = 5;
   static const int DODGE_TURN = 6;
   static const int STOP = 7;
+  static const int EMERGENCY_STOP = 8;
   int state_;
   rclcpp::Time state_ts_;
 
   void go_state(int new_state);
+  void manage_user_feedback(int new_state);
+  void change_status_led(int new_state);
+  void change_status_sound(int new_state);
   bool check_ready_2_forward();
-  bool check_forward_2_yaw();
+  bool check_forward_2_yaw_turn_in();
   bool check_forward_2_stop();
   bool check_stop_2_forward();
-  bool check_yaw_2_dodge();
+  bool check_yaw_turn_in_2_dodge_turn();
   bool check_dodge_2_yaw_new_obstacle();
-  bool check_dodge_2_yaw_out();
-  bool check_yaw_out_2_forward();
+  bool check_dodge_2_yaw_turn_out();
+  bool check_yaw_turn_out_2_forward();
+  bool check_any_2_emergency_stop();
+  bool check_emergency_2_back();
+  bool check_back_2_yaw_turn_in();
 
-  const rclcpp::Duration YAW_TIME {7.5s};
-  const rclcpp::Duration DODGE_TIME {20s};
-  const rclcpp::Duration SCAN_TIMEOUT {1s};
+  double yaw_time_;
+  double back_time_;
+  double dodge_time_;
+  double scan_timeout_;
 
-  kobuki_ros_interfaces::msg::Sound out_sound;
-  kobuki_ros_interfaces::msg::Led out_led;
-
-  static constexpr float SPEED_LINEAR = 0.1f;
-  static constexpr float SPEED_ANGULAR = 0.3f;
-  static constexpr float OBSTACLE_DISTANCE = 1.0f;
+  float speed_linear_;
+  float speed_angular_;
+  float obstacle_distance_;
 
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
   rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
   rclcpp::Publisher<kobuki_ros_interfaces::msg::Sound>::SharedPtr sound_pub_;
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
   rclcpp::Subscription<kobuki_ros_interfaces::msg::ButtonEvent>::SharedPtr button_sub_;
+  rclcpp::Subscription<kobuki_ros_interfaces::msg::BumperEvent>::SharedPtr bumper_sub_;
   rclcpp::TimerBase::SharedPtr timer_;
 
   sensor_msgs::msg::LaserScan::UniquePtr last_scan_;
   kobuki_ros_interfaces::msg::ButtonEvent::UniquePtr last_button_event_;
+  kobuki_ros_interfaces::msg::BumperEvent::UniquePtr last_bumper_event_;
 };
 
 }  // namespace avoid_obstacle_cpp

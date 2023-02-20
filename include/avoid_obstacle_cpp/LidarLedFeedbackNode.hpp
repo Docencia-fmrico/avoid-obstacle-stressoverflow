@@ -31,7 +31,7 @@ private:
   void scan_callback(sensor_msgs::msg::LaserScan::UniquePtr msg);
   void control_cycle();
 
-  static constexpr float OBSTACLE_DISTANCE = 1.0f;
+  float obstacle_distance_;
 
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
   rclcpp::Publisher<kobuki_ros_interfaces::msg::Led>::SharedPtr led_pub_;
