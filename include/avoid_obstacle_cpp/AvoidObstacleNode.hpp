@@ -97,7 +97,6 @@ private:
   bool check_emergency_2_ready();
   bool check_emergency_2_back();
   bool check_back_2_yaw_turn_in();
-
 };
 
 }  // namespace avoid_obstacle_cpp

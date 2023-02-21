@@ -29,21 +29,21 @@ def generate_launch_description():
         )
 
     avoidObstacles_cmd = Node(package='avoid_obstacle_cpp',
-                      executable='avoidObstacle',
-                      output='screen',
-                      parameters=[{
-                        'use_sim_time': False
-                      }, params_file],
-                      remappings=[
-                        ('input_scan', '/scan_filtered'),
-                        ('output_vel', '/cmd_vel'),
-                        ('input_button', '/events/button'),
-                        ('lidar_led', '/commands/led2'),
-                        ('status_led', '/commands/led1'),
-                        ('output_sound', '/commands/sound'),
-                        ('input_bumper', '/events/bumper'),
-                        ('input_wheel_drop', '/events/wheel_drop')
-                      ])
+                              executable='avoidObstacle',
+                              output='screen',
+                              parameters=[{
+                                'use_sim_time': False
+                              }, params_file],
+                              remappings=[
+                                ('input_scan', '/scan_filtered'),
+                                ('output_vel', '/cmd_vel'),
+                                ('input_button', '/events/button'),
+                                ('lidar_led', '/commands/led2'),
+                                ('status_led', '/commands/led1'),
+                                ('output_sound', '/commands/sound'),
+                                ('input_bumper', '/events/bumper'),
+                                ('input_wheel_drop', '/events/wheel_drop')
+                              ])
 
     ld = LaunchDescription()
     ld.add_action(avoidObstacles_cmd)
