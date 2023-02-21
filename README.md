@@ -58,8 +58,38 @@ Since we decided to create new features and new states, we had to restructure th
 (cometar el diagrama de estadios)
 
 ## Observations 🔎 
-  - Grip change: Durante la realizacion de la practica nos dimos cuenta de que el robot no andaba igual en el suelo y en la moqueta. Esto se deve a que tienen distinto rozaminto y dificulta de mayor o menor medida la circulacion del robot. Esto causa que el robot
+  - Grip change: During the practice we realized that the robot did not walk the same on the floor and on the carpet. This is due to the fact that they have different friction and influence the movement of the robot to a greater or lesser extent. This causes the robot to not be able to perform the turns well in some cases.
   
-  - Sensor remaping:
-  - Parameters in params.yaml
-  
+  - Sensor remaping: For the correct functioning of the robot and its correct implementation, we decided to remap the topics as can be seen in the **avoid_obstacle.launch.py** file.
+ ```python
+ remappings=[
+                        ('input_scan', '/scan_filtered'),
+                        ('output_vel', '/cmd_vel'),
+                        ('input_button', '/events/button'),
+                        ('lidar_led', '/commands/led2'),
+                        ('status_led', '/commands/led1'),
+                        ('output_sound', '/commands/sound'),
+                        ('input_bumper', '/events/bumper'),
+                        ('input_wheel_drop', '/events/wheel_drop')
+                      ])
+```
+
+  - Parameters in params.yaml: Also, we put all the parameters that the robot uses to work in a file called params.yaml. From this file you can easily configure the parameters such as the speed, the angle of rotation, the distance to the obstacle... 
+
+```c++
+lidar_led_feedback:
+  ros__parameters:
+    obstacle_distance: 1.0
+
+avoid_obstacle:
+  ros__parameters:
+    yaw_time: 2.5
+    back_time: 1.0
+    dodge_time: 13.0
+    scan_timeout: 1.0
+    speed_linear: 0.3
+    speed_angular: 0.9
+    speed_linear_factor: 0.8
+    speed_angular_factor: 0.4
+    obstacle_distance: 1.0
+```
