@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/carlos/Escritorio/ros2/practicas/src/avoid-obstacle-stressoverflow/build/avoid_obstacle_cpp/avoidObstacle" "TARGETS" "avoidObstacle" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/avoid_obstacle_cpp")
