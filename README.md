@@ -1,36 +1,9 @@
 # ASR-0-AvoidObstacle
 Práctica 0 - Arquitecturas Software para Robots 2023
 
-Crea un comportamiento autónomo de un robot usando una máquina de estado finito (FSM) para evitar obstáculos:
-1. El robot empieza parado, y comienza su comportamiento cuando se pulsa un botón del robot.
-2. El robot avanza hasta encontrar un obstáculo a menos de un metro enfrente de él.
-3. Cuando encuentra un obstáculo, el robot gira 90 grados, y realiza un movimiento de arco para sobrepasarlo.
-4. Si mientras está haciendo el arco, se encuentra un nuevo obstáculo, vuelve a hacer lo mismo del punto 3.
-
-![asr_practica_0](https://user-images.githubusercontent.com/3810011/217230998-a162f2e1-cf50-4e26-9155-53ca73e99f86.png)
-
-El robot debe funcionar en el robot real Kobuki.
-
-Puntuación (sobre 10):
-
-* +8 correcto funcionamiento en el robot real.
-* +2 Readme.md bien documentado con videos.
-* -3 Warnings o que no pase los tests.
-* +1 Setup de CI/CD
-
-> Buenas Carlos, acuérdate de hacer pull antes de intentar pushear nada, que nos la lías. :D
-
-Rama carlos
-
-Seguro que os sale lo mejor que podáis !!
-
--------------------------------------------
-# ASR-0-AvoidObstacle
-Práctica 0 - Arquitecturas Software para Robots 2023
-
 ## Goals
 Create an autonomous robot machine using a finite state machine (FSM) to avoid obstacles:
-1. The robot starts stopped, and starts its behavior when a button on the robot is pressed.
+1. The robot starts motionless, and starts its behavior when a button on the robot is pressed.
 2. The robot advances until it finds an obstacle less than one meter in front of it.
 3. When it find an obstacle, the robot turns 90 degrees, and makes an arc movement to go over it.
 4. If while you are making the arc, you find a new obstacle, do the same thing from point 3 again.
