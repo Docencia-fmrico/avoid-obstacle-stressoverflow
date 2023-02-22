@@ -1,43 +1,21 @@
 # ASR-0-AvoidObstacle
 Práctica 0 - Arquitecturas Software para Robots 2023
 
-Crea un comportamiento autónomo de un robot usando una máquina de estado finito (FSM) para evitar obstáculos:
-1. El robot empieza parado, y comienza su comportamiento cuando se pulsa un botón del robot.
-2. El robot avanza hasta encontrar un obstáculo a menos de un metro enfrente de él.
-3. Cuando encuentra un obstáculo, el robot gira 90 grados, y realiza un movimiento de arco para sobrepasarlo.
-4. Si mientras está haciendo el arco, se encuentra un nuevo obstáculo, vuelve a hacer lo mismo del punto 3.
-
-![asr_practica_0](https://user-images.githubusercontent.com/3810011/217230998-a162f2e1-cf50-4e26-9155-53ca73e99f86.png)
-
-El robot debe funcionar en el robot real Kobuki.
-
-Puntuación (sobre 10):
-
-* +8 correcto funcionamiento en el robot real.
-* +2 Readme.md bien documentado con videos.
-* -3 Warnings o que no pase los tests.
-* +1 Setup de CI/CD
-
-> Buenas Carlos, acuérdate de hacer pull antes de intentar pushear nada, que nos la lías. :D
-
-Rama carlos
-
-Seguro que os sale lo mejor que podáis !!
-
--------------------------------------------
-# ASR-0-AvoidObstacle
-Práctica 0 - Arquitecturas Software para Robots 2023
-
 ## Goals
 Create an autonomous robot machine using a finite state machine (FSM) to avoid obstacles:
-1. The robot starts stopped, and starts its behavior when a button on the robot is pressed.
+1. The robot starts motionless, and starts its behavior when a button on the robot is pressed.
 2. The robot advances until it finds an obstacle less than one meter in front of it.
 3. When it find an obstacle, the robot turns 90 degrees, and makes an arc movement to go over it.
 4. If while you are making the arc, you find a new obstacle, do the same thing from point 3 again.
 
 ## Implementation ⚙️ 
-To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation. ![image](https://user-images.githubusercontent.com/102520602/220409787-f4fcc1de-3ffe-4928-ac15-92db50e80ffd.png)
+To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation.
+![image](https://user-images.githubusercontent.com/102520602/220710032-3e1737e7-7e79-4a19-873f-d2f558d0b4ee.png)
+
 This was the first sketch we did and as you can see there are the states: stopped, go forward, obstacle turn, arc turn, turn exit.
+
+We also made a sketch of the node diagram
+![image](https://user-images.githubusercontent.com/102520602/220708277-a76c78c3-ae46-4199-93d8-09a805fcfab1.png)
 
 Later we thought that in order for the practice to be more complete, we could add some more things that would provide the robot with better functioning in addition to what was already requested
 .
@@ -55,7 +33,11 @@ Later we thought that in order for the practice to be more complete, we could ad
 ### State diagram 📊 
 Since we decided to create new features and new states, we had to restructure the state diagram. Some of the states were renamed and others created from scratch. In addition, the Lidar node was added with the leds apart from the main node.
 
-(cometar el diagrama de estadios)
+![image](https://user-images.githubusercontent.com/102520602/220708440-e7275a4a-ae5e-452b-82c2-cbe4f51f5af9.png)
+
+We have also created a node diagram to better show how everything works inside
+
+![image](https://user-images.githubusercontent.com/102520602/220709216-bfa4a8a9-f4bf-4d44-aa6e-132700800bf3.png)
 
 ## Observations 🔎 
   - Grip change: During the practice we realized that the robot did not walk the same on the floor and on the carpet. This is due to the fact that they have different friction and influence the movement of the robot to a greater or lesser extent. This causes the robot to not be able to perform the turns well in some cases.
