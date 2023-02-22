@@ -20,6 +20,7 @@ include_directories(include)
 
 add_executable(avoidObstacle
   src/avoid_obstacle_cpp/AvoidObstacleNode.cpp
+  src/avoid_obstacle_cpp/LidarLedFeedbackNode.cpp
   src/avoidObstacle_main.cpp
 )
 ament_target_dependencies(avoidObstacle ${dependencies})
@@ -32,6 +33,7 @@ install(TARGETS
 )
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
