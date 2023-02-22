@@ -1,0 +1,28 @@
+name: Colcon Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup ROS 2
+      uses: ros-tooling/setup-ros@0.5.0
+    with:
+        required-ros-distributions: humble
+
+    - name: Run Tests
+      uses: ros-tooling/action-ros-ci@0.2.7
+      with:
+        package-name: avoid_obstacle_cpp
+
+    - name: Upload Logs
+      uses: actions/upload-artifact@v1
+      with:
+        name: colcon-logs
+        path: ros_ws/log
+      if: always()
