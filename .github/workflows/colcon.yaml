@@ -23,7 +23,7 @@ jobs:
           required-ros-distributions: humble
 
       - name: Run Tests
-        uses: ros-tooling/action-ros-ci@v0.2.6
+        uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: avoid_obstacle_cpp
           import-token: ${{ secrets.REPO_TOKEN }}
