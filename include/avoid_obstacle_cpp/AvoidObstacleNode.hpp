@@ -44,13 +44,6 @@ private:
   float speed_angular_;
   float obstacle_distance_;
 
-  void go_state(int new_state);
-  bool check_forward_2_back();
-  bool check_forward_2_stop();
-  bool check_back_2_turn();
-  bool check_turn_2_forward();
-  bool check_stop_2_forward();
-
   const rclcpp::Duration TURNING_TIME {2s};
   const rclcpp::Duration BACKING_TIME {2s};
   const rclcpp::Duration SCAN_TIMEOUT {1s};
