@@ -3,8 +3,11 @@
 <package format="3">
   <name>avoid_obstacle_cpp</name>
   <version>1.0.0</version>
-  <description>This package contains the Intelligent Robotics Lab's robots from URJC</description>
-  <maintainer email="josemiguel.guerrero@urjc.es">Jose Miguel Guerrero</maintainer>
+  <description>This package contains the first exercise of ASR-2023 from URJC Robotics Software Engineering</description>
+  <maintainer email="c.escarcena.2021@alumnos.urjc.es">Carlos Escarcena</maintainer>
+  <maintainer email="d.garciac.2021@alumnos.urjc.es">Diego García</maintainer>
+  <maintainer email="a.garciab.2021@alumnos.urjc.es">Arantxa García</maintainer>
+  <maintainer email="mt.ortega.2021@alumnos.urjc.es">María Teresa Ortega</maintainer>
   <license>Apache License, Version 2.0</license>
   
   <buildtool_depend>ament_cmake</buildtool_depend>
