@@ -9,8 +9,13 @@ Create an autonomous robot machine using a finite state machine (FSM) to avoid o
 4. If while you are making the arc, you find a new obstacle, do the same thing from point 3 again.
 
 ## Implementation ⚙️ 
-To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation. ![image](https://user-images.githubusercontent.com/102520602/220409787-f4fcc1de-3ffe-4928-ac15-92db50e80ffd.png)
+To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation.
+![image](https://user-images.githubusercontent.com/102520602/220710032-3e1737e7-7e79-4a19-873f-d2f558d0b4ee.png)
+
 This was the first sketch we did and as you can see there are the states: stopped, go forward, obstacle turn, arc turn, turn exit.
+
+We also made a sketch of the node diagram
+![image](https://user-images.githubusercontent.com/102520602/220708277-a76c78c3-ae46-4199-93d8-09a805fcfab1.png)
 
 Later we thought that in order for the practice to be more complete, we could add some more things that would provide the robot with better functioning in addition to what was already requested
 .
@@ -28,7 +33,11 @@ Later we thought that in order for the practice to be more complete, we could ad
 ### State diagram 📊 
 Since we decided to create new features and new states, we had to restructure the state diagram. Some of the states were renamed and others created from scratch. In addition, the Lidar node was added with the leds apart from the main node.
 
-(cometar el diagrama de estadios)
+![image](https://user-images.githubusercontent.com/102520602/220708440-e7275a4a-ae5e-452b-82c2-cbe4f51f5af9.png)
+
+We have also created a node diagram to better show how everything works inside
+
+![image](https://user-images.githubusercontent.com/102520602/220709216-bfa4a8a9-f4bf-4d44-aa6e-132700800bf3.png)
 
 ## Observations 🔎 
   - Grip change: During the practice we realized that the robot did not walk the same on the floor and on the carpet. This is due to the fact that they have different friction and influence the movement of the robot to a greater or lesser extent. This causes the robot to not be able to perform the turns well in some cases.
