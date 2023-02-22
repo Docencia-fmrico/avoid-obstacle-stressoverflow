@@ -8,18 +8,24 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+      fail-fast: false
     steps:
+      - name: Install deps
+        run: sudo apt-get update && sudo apt-get install -y wget python3-vcstool python3-colcon-coveragepy-result
+
       - name: Setup ROS 2
         uses: ros-tooling/setup-ros@v0.5
         with:
           required-ros-distributions: humble
 
       - name: Run Tests
-        uses: ros-tooling/action-ros-ci@v0.2
+        uses: ros-tooling/action-ros-ci@v0.2.6
         with:
           package-name: avoid_obstacle_cpp
-          # If there are private dependencies (e.g., in a file provided through vcs-repo-file-url), a PAT is required
           import-token: ${{ secrets.REPO_TOKEN }}
           target-ros2-distro: humble
           vcs-repo-file-url: https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
