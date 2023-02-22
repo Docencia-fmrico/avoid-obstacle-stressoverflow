@@ -1,0 +1,1 @@
+/home/carlos/Escritorio/ros2/practicas/src/avoid-obstacle-stressoverflow/launch/kobuki.launch.py
