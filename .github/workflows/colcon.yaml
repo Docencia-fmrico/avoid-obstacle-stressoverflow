@@ -21,6 +21,8 @@ jobs:
         uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: avoid_obstacle_cpp
+          # If there are private dependencies (e.g., in a file provided through vcs-repo-file-url), a PAT is required
+          import-token: ${{ secrets.REPO_TOKEN }}
           target-ros2-distro: humble
           vcs-repo-file-url: https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
 
