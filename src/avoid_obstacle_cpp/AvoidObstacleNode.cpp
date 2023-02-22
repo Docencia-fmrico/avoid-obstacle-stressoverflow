@@ -483,4 +483,4 @@ AvoidObstacleNode::check_back_2_yaw_turn_in()
   return (now() - state_ts_ ) > rclcpp::Duration::from_seconds(back_time_);
 }
 
-}  // namespace avoid_obstacle_cpp cicd test
+}  // namespace avoid_obstacle_cpp
