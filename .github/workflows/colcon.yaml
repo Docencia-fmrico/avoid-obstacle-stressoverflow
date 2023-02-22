@@ -23,7 +23,6 @@ jobs:
           package-name: avoid_obstacle_cpp
           import-token: ${{ secrets.REPO_TOKEN }}
           target-ros2-distro: humble
-          vcs-repo-file-url: https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
 
       - name: Upload Logs
         uses: actions/upload-artifact@v1
