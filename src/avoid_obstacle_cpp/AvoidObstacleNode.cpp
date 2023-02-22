@@ -1,10 +1,10 @@
-// Copyright 2021 Intelligent Robotics Lab
+// Copyright 2023 StressOverflow
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//   http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -284,15 +284,14 @@ AvoidObstacleNode::change_status_led(int new_state)
   kobuki_ros_interfaces::msg::Led out_led;
 
   /*
-   * The message is manipulated depending on the state that is 
+   * The message is manipulated depending on the state that is
    * parsed. Some of them could have the same output, and thus the order matters.
    * This order may differ on the numerical order they have been defined.
-   * 
+   *
    * Then, whatever message was built, it is published.
    */
 
-  switch (new_state)
-  {
+  switch (new_state) {
     case READY:
       out_led.value = kobuki_ros_interfaces::msg::Led::ORANGE;
       break;
@@ -325,15 +324,14 @@ AvoidObstacleNode::change_status_sound(int new_state)
   kobuki_ros_interfaces::msg::Sound out_sound;
 
   /*
-   * The message is manipulated depending on the state that is 
+   * The message is manipulated depending on the state that is
    * parsed. Some of them could have the same output, and thus the order matters.
    * This order may differ on the numerical order they have been defined.
-   * 
+   *
    * Then, whatever message was built, it is published.
    */
 
-  switch (new_state)
-  {
+  switch (new_state) {
     case READY:
     case FORWARD:
     case YAW_TURN_IN:
@@ -361,15 +359,15 @@ AvoidObstacleNode::change_status_sound(int new_state)
 bool
 AvoidObstacleNode::check_ready_2_forward()
 {
-  if (last_button_event_ == nullptr) { return false; }
+  if (last_button_event_ == nullptr) {return false;}
 
-  return last_button_event_->state; 
+  return last_button_event_->state;
 }
 
 bool
 AvoidObstacleNode::check_forward_2_yaw_turn_in()
 {
-  if (last_scan_ == nullptr) { return false; }
+  if (last_scan_ == nullptr) {return false;}
 
   size_t pos = 0;
 
@@ -379,7 +377,7 @@ AvoidObstacleNode::check_forward_2_yaw_turn_in()
 bool
 AvoidObstacleNode::check_forward_2_stop()
 {
-  /* 
+  /*
    * Stop if no sensor readings in a given timeout.
    */
   auto elapsed = now() - rclcpp::Time(last_scan_->header.stamp);
@@ -389,7 +387,7 @@ AvoidObstacleNode::check_forward_2_stop()
 bool
 AvoidObstacleNode::check_stop_2_forward()
 {
-  /* 
+  /*
    * Going forward if sensor readings are available again.
    */
   auto elapsed = now() - rclcpp::Time(last_scan_->header.stamp);
@@ -406,7 +404,7 @@ bool
 AvoidObstacleNode::check_dodge_2_yaw_new_obstacle()
 {
   /*
-   * A new obstacle while dodging is nothing but the same 
+   * A new obstacle while dodging is nothing but the same
    * check procedure of a conventional obstacle. Thus the call to avoid
    * code duplication.
    */
@@ -437,16 +435,16 @@ AvoidObstacleNode::check_any_2_emergency_stop()
    * But sometimes one of them could happen without the other.
    * So every possible emergency is tested and stored in a variable
    * before returned.
-   * 
+   *
    * Once only one emergency is true, it is inmediately returned to be handled.
    */
   bool result = false;
 
-  if (last_bumper_event_ != nullptr) { result = last_bumper_event_->state; }
+  if (last_bumper_event_ != nullptr) {result = last_bumper_event_->state;}
 
-  if (result) return true;
-  
-  if (last_wheel_drop_event_ != nullptr) { result = last_wheel_drop_event_->state; };
+  if (result) {return true;}
+
+  if (last_wheel_drop_event_ != nullptr) {result = last_wheel_drop_event_->state;}
 
   return result;
 }
@@ -454,7 +452,7 @@ AvoidObstacleNode::check_any_2_emergency_stop()
 bool
 AvoidObstacleNode::check_emergency_2_ready()
 {
-  if (last_wheel_drop_event_ == nullptr) { return false; };
+  if (last_wheel_drop_event_ == nullptr) {return false;}
 
   return !last_wheel_drop_event_->state;
 }
@@ -462,19 +460,19 @@ AvoidObstacleNode::check_emergency_2_ready()
 bool
 AvoidObstacleNode::check_emergency_2_back()
 {
-  if (last_bumper_event_ == nullptr) { return false; };
+  if (last_bumper_event_ == nullptr) {return false;}
   /*
    * The following line must be added since the emergency could be a wheel drop,
    * however with the robot in the air, if the bumper is pressed, the robot returns
    * to the behaviour tree as usual.
-   * 
+   *
    * With a few emergency states this is no problem, but maybe when a lot of them could be
    * possible, a better aproach could be to raise a 'code' where every resume procedure
    * will check BEFORE attempting to clean an emergency caused by another procedure.
-   * 
+   *
    * For future versions.
    */
-  if (last_wheel_drop_event_ != nullptr && last_wheel_drop_event_->state) { return false; }
+  if (last_wheel_drop_event_ != nullptr && last_wheel_drop_event_->state) {return false;}
 
   return last_bumper_event_->state;
 }
@@ -485,4 +483,4 @@ AvoidObstacleNode::check_back_2_yaw_turn_in()
   return (now() - state_ts_ ) > rclcpp::Duration::from_seconds(back_time_);
 }
 
-} // namespace avoid_obstacle_cpp
+}  // namespace avoid_obstacle_cpp

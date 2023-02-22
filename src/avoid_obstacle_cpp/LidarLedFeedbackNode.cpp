@@ -1,10 +1,10 @@
-// Copyright 2021 Intelligent Robotics Lab
+// Copyright 2023 StressOverflow
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//   http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,7 +54,9 @@ LidarLedFeedbackNode::control_cycle()
 
   out_led.value = kobuki_ros_interfaces::msg::Led::BLACK;
 
-  // Do nothing until the first sensor read
+  /*
+   * Do nothing until the first sensor read
+   */
   if (last_scan_ == nullptr) {
     led_pub_->publish(out_led);
     return;
@@ -71,4 +73,4 @@ LidarLedFeedbackNode::control_cycle()
   led_pub_->publish(out_led);
 }
 
-} // namespace lidar_led_feedback_cpp
+}  // namespace lidar_led_feedback_cpp

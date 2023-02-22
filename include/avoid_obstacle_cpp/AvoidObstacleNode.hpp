@@ -1,4 +1,4 @@
-// Copyright 2021 Intelligent Robotics Lab
+// Copyright 2023 StressOverflow
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -97,7 +97,6 @@ private:
   bool check_emergency_2_ready();
   bool check_emergency_2_back();
   bool check_back_2_yaw_turn_in();
-
 };
 
 }  // namespace avoid_obstacle_cpp
