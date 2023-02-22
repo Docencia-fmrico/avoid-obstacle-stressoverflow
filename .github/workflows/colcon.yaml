@@ -18,7 +18,7 @@ jobs:
           required-ros-distributions: humble
 
       - name: Run Tests
-        uses: ros-tooling/action-ros-ci@v0.2.7
+        uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: avoid_obstacle_cpp
           target-ros2-distro: humble
