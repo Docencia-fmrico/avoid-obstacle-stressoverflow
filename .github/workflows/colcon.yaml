@@ -9,16 +9,20 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:jammy
     steps:
       - name: Setup ROS 2
-        uses: ros-tooling/setup-ros@0.5.0
+        uses: ros-tooling/setup-ros@v0.5
         with:
           required-ros-distributions: humble
 
       - name: Run Tests
-        uses: ros-tooling/action-ros-ci@0.2.7
+        uses: ros-tooling/action-ros-ci@v0.2.7
         with:
           package-name: avoid_obstacle_cpp
+          target-ros2-distro: humble
+          vcs-repo-file-url: https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos
 
       - name: Upload Logs
         uses: actions/upload-artifact@v1
