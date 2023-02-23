@@ -1,6 +1,12 @@
 # ASR-0-AvoidObstacle
 
-Práctica 0 - Arquitecturas Software para Robots 2023
+![distro](https://img.shields.io/badge/Ubuntu%2022-Jammy%20Jellyfish-violet)
+![distro](https://img.shields.io/badge/ROS2-Humble-blue)
+[![main](https://github.com/Docencia-fmrico/avoid-obstacle-stressoverflow/actions/workflows/colcon.yaml/badge.svg?branch=main)](https://github.com/Docencia-fmrico/avoid-obstacle-stressoverflow/actions/workflows/colcon.yaml)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kobuki-base/kobuki_core/devel/resources/kobuki.png" />
+</p>
 
 ## Goals
 
@@ -123,5 +129,33 @@ Here you can see a real case where the bumper was pressed and the robot itself b
 https://user-images.githubusercontent.com/92941081/220970563-4bebffdf-9b9c-4805-9dd5-5593125a9fd4.mp4
 
 Notice how, although both events (Bumper and Wheel Drop) trigger the same state, the robot behaves differently depending on which one actually happened. This decision was made due to some procedures must to take place in every kind of "emergency", like stopping the robot from moving, maybe publish the issue in some topic... Later we can actually manage what caused the issue once we know we have everything under control.
+
+## About
+
+This is a project made by the [StressOverflow], a student group from the [Universidad Rey Juan Carlos].
+Copyright &copy; 2023.
+
+Maintainers:
+
+* [Carlos Escarcena]
+* [Arantxa García]
+* [Diego García]
+* [Teresa Ortega]
+
+## License
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0) 
+
+This work is licensed under a [APACHE LICENSE, VERSION 2.0][apache2.0].
+
+[apache2.0]: https://www.apache.org/licenses/LICENSE-2.0
+
+[Universidad Rey Juan Carlos]: https://www.urjc.es/
+[StressOverflow]: https://github.com/orgs/Docencia-fmrico/teams/stressoverflow
+[Carlos Escarcena]: https://github.com/cescarcena2021
+[Arantxa García]: https://github.com/arantxagb
+[Diego García]: https://github.com/dgarcu
+[Teresa Ortega]: https://github.com/mtortega2021
+
 
 [^1]: In this case, Ubuntu 22.04 Jammy Jellyfish and ROS 2 Humble Hawskbill, which is the same enviroment we are working with.
