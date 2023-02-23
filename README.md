@@ -13,15 +13,7 @@ Create an autonomous robot machine using a finite state machine (FSM) to avoid o
 
 ## Implementation ⚙️
 
-To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation.
-![image](https://user-images.githubusercontent.com/102520602/220710032-3e1737e7-7e79-4a19-873f-d2f558d0b4ee.png)
-
-This was the first sketch we did and as you can see there are the states: stopped, go forward, obstacle turn, arc turn, turn exit.
-
-We also made a sketch of the node diagram
-![image](https://user-images.githubusercontent.com/102520602/220708277-a76c78c3-ae46-4199-93d8-09a805fcfab1.png)
-
-Later we thought that in order for the practice to be more complete, we could add some more things that would provide the robot with better functioning in addition to what was already requested.
+To get hands-on with this practice, the first thing we did was sketch a state diagram in which you could see at a glance the different states through which the robot would go through in its operation. Later we thought that in order for the practice to be more complete, we could add some more things that would provide the robot with better functioning in addition to what was already requested.
 
 ### Additional implementations to practice 👨‍🔧
   
@@ -33,13 +25,27 @@ Later we thought that in order for the practice to be more complete, we could ad
 
 - **New node:** In order to cut our teeth in the multi-node scope, we decided to implement a whole node in charge of the LIDAR Feedback. This allowed us to check anytime if the robot is actually detecting an obstacle. Even if the robot is not moving or not executing the main node. We could have done this in the main node, but it will be mandatory to have a procedure in the control cycle that takes charge of the led publisher as well as the LIDAR readings. Since this would probably be a separate method anyway, it maked sense to us to fully isolate this feature on it's own node.
 
-### State diagram 📊
+### State and node diagrams 📊
+
+**RQT** returns this final diagram after all implementations:
+
+![rosgraph](https://user-images.githubusercontent.com/92941081/220967721-212142d4-d818-4398-b194-06a87061a420.png)
+
+However, we are explaining how we developed the whole application from the very beginning. Changes are noticeable! Let's start with the state diagram:
+
+![image](https://user-images.githubusercontent.com/102520602/220710032-3e1737e7-7e79-4a19-873f-d2f558d0b4ee.png)
+
+This was the first sketch we did and as you can see there are the states: stopped, go forward, obstacle turn, arc turn, turn exit.
 
 Since we decided to create new features and new states, we had to restructure the state diagram. Some of the states were renamed and others created from scratch. In addition, the Lidar node was added with the leds apart from the main node.
 
 ![image](https://user-images.githubusercontent.com/102520602/220708440-e7275a4a-ae5e-452b-82c2-cbe4f51f5af9.png)
 
-We have also created a node diagram to better show how everything works inside
+We also made a sketch of the node diagram, this was our first approach:
+
+![image](https://user-images.githubusercontent.com/102520602/220708277-a76c78c3-ae46-4199-93d8-09a805fcfab1.png)
+
+We have also created a node diagram to better show how everything works inside once all the features were finally finished:
 
 ![image](https://user-images.githubusercontent.com/102520602/220709216-bfa4a8a9-f4bf-4d44-aa6e-132700800bf3.png)
 
@@ -85,5 +91,37 @@ avoid_obstacle:
 - *Continous Integration* (CI) setup. We have added a workflow to be triggered through **GitHub Actions** whenever a `pull request` is made. From this workflow, the code is built and tested in any enviroement we want[^1]. You can find this workflow [here](./.github/workflows/colcon.yaml). With this feature we can automatically test our code before pushing it to the `main` branch. This allows us to directly review the `pull request` without worrying about breaking the already pushed code, coding style... Since we will instantly see a checkmark with the test output. A step further that can be taken is to make this test to trigger another workflows that makes our work easier, like automatically deploy our packet! A.K.A. *Continous Deployment* (CD).
 
   In order to tackle this, we have followed [this article](https://ubuntu.com/blog/ros-2-ci-with-github-actions) from the Ubuntu blog itself. There you can find more details about how exactly the [workflow file](./.github/workflows/colcon.yaml) actually works!
+
+### Tests 🧾
+
+#### Simulation 🖥️
+
+#### Real World 🌍
+
+Below you can see some demos about the features we have described earlier:
+
+- Lidar Feedback. Notice how the `STATUS_LED` from the robot (Which is the middle one) stays `ORANGE` (Which means that the main node is waiting for a button being pressed) while the right led reacts to the LIDAR readings:
+
+  ![lidar_feedback](./doc/img/lidar_feedback.gif)
+
+- Bumper feature:
+
+  ![bumper_feedback](./doc/img/bumper_feedback.gif)
+  
+- Wheel Drop feature:
+  
+  ![wheel_drop_feedback](./doc/img/wheel_drop_feedback.gif)
+  
+#### Real case
+
+Below you can see the application running with no issues at all:
+
+https://user-images.githubusercontent.com/92941081/220970516-240a9db6-ba12-45cb-9055-da5119b4e370.mp4
+
+Here you can see a real case where the bumper was pressed and the robot itself being lifted intentionally to trigger the `EMERGENCY_STOP` state:
+
+https://user-images.githubusercontent.com/92941081/220970563-4bebffdf-9b9c-4805-9dd5-5593125a9fd4.mp4
+
+Notice how, although both events (Bumper and Wheel Drop) trigger the same state, the robot behaves differently depending on which one actually happened. This decision was made due to some procedures must to take place in every kind of "emergency", like stopping the robot from moving, maybe publish the issue in some topic... Later we can actually manage what caused the issue once we know we have everything under control.
 
 [^1]: In this case, Ubuntu 22.04 Jammy Jellyfish and ROS 2 Humble Hawskbill, which is the same enviroment we are working with.
