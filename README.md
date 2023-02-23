@@ -91,7 +91,7 @@ To get hands-on with this practice, the first thing we did was sketch a state di
 
 - **Leds and sounds:** To make it easier and more comfortable to debug the robot's status, we decided to add colored leds and sounds to indicate what it is going on inside the robot at all times. For example, when the robot changes state, it emits a certain sound and when the robot detects an unexpected object, the led turns red.
 
-- **New node:** In order to cut our teeth in the multi-node scope, we decided to implement a whole node in charge of the LIDAR Feedback. This allowed us to check anytime if the robot is actually detecting an obstacle. Even if the robot is not moving or not executing the main node. We could have done this in the main node, but it woyld have been mandatory to have a procedure in the control cycle that takes charge of the led publisher as well as the LIDAR readings. Since this would probably be a separate method anyway, it maked sense to us to fully isolate this feature on it's own node.
+- **New node:** In order to cut our teeth in the multi-node scope, we decided to implement a whole node in charge of the LIDAR Feedback. This allowed us to check anytime if the robot is actually detecting an obstacle. Even if the robot is not moving or not executing the main node. We could have done this in the main node, but it woyld have been mandatory to have a procedure in the control cycle that takes charge of the led publisher as well as the LIDAR readings. Since this would probably be a separate method anyway, it made sense to us to fully isolate this feature on it's own node.
 
 ### State and node diagrams 📊
 
