@@ -31,7 +31,7 @@ Later we thought that in order for the practice to be more complete, we could ad
 
 - **Leds and sounds:** To make it easier and more comfortable to debug the robot's status, we decided to add colored leds and sounds to indicate what it was doing on inside the robot in each case. For example, when the robot changes state, it emits a certain sound or when the robot detects an unexpected object, the led turns red.
 
-- **New node:** (completar luego)
+- **New node:** In order to cut our teeth in the multi-node scope, we decided to implement a whole node in charge of the LIDAR Feedback. This allowed us to check anytime if the robot is actually detecting an obstacle. Even if the robot is not moving or not executing the main node. We could have done this in the main node, but it will be mandatory to have a procedure in the control cycle that takes charge of the led publisher as well as the LIDAR readings. Since this would probably be a separate method anyway, it maked sense to us to fully isolate this feature on it's own node.
 
 ### State diagram 📊
 
@@ -59,7 +59,7 @@ We have also created a node diagram to better show how everything works inside
             ('output_sound', '/commands/sound'),
             ('input_bumper', '/events/bumper'),
             ('input_wheel_drop', '/events/wheel_drop')
-            ])
+            ]
 ```
 
 - Parameters in [**`params.yaml`**](./config/params.yaml): Also, we put all the parameters that the robot uses to work in a file called [**`params.yaml`**](./config/params.yaml). From this file you can easily configure the parameters such as the speed, the angle of rotation, the distance to the obstacle...
