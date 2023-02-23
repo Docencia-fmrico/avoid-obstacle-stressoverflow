@@ -32,10 +32,10 @@ def generate_launch_description():
                               executable='avoidObstacle',
                               output='screen',
                               parameters=[{
-                                'use_sim_time': True
+                                'use_sim_time': False
                               }, params_file],
                               remappings=[
-                                ('input_scan', '/scan'),
+                                ('input_scan', '/scan_filtered'),
                                 ('output_vel', '/cmd_vel'),
                                 ('input_button', '/events/button'),
                                 ('lidar_led', '/commands/led2'),
