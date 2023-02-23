@@ -84,4 +84,6 @@ avoid_obstacle:
 
 - *Continous Integration* (CI) setup. We have added a workflow to be triggered through **GitHub Actions** whenever a `pull request` is made. From this workflow, the code is built and tested in any enviroement we want[^1]. You can find this workflow [here](./.github/workflows/colcon.yaml). With this feature we can automatically test our code before pushing it to the `main` branch. This allows us to directly review the `pull request` without worrying about breaking the already pushed code, coding style... Since we will instantly see a checkmark with the test output. A step further that can be taken is to make this test to trigger another workflows that makes our work easier, like automatically deploy our packet! A.K.A. *Continous Deployment* (CD).
 
+In order to tackle this, we have followed [this article](https://ubuntu.com/blog/ros-2-ci-with-github-actions) from the Ubuntu blog itself. There you can find more details about how exactly the [workflow file](./.github/workflows/colcon.yaml)
+
 [^1]: In this case, Ubuntu 22.04 Jammy Jellyfish and ROS 2 Humble Hawskbill, which is the same enviroment we are working with.
