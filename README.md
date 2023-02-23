@@ -212,9 +212,13 @@ avoid_obstacle:
 
 #### Simulation 🖥️
 
-Before launching the program in the real robot, **we have tested it beforehand in a simulated enviroment**. Although it does not behave like a real robot would, it is close enough to debug or improve the code. Here you can see a representation of the test we have done during the development of this exercise:
+Before launching the program in the real robot, **we have tested it beforehand in a simulated enviroment**, using tools like [Gazebo](https://gazebosim.org/home) or [RViz](https://github.com/ros2/rviz). Although it does not behave like a real robot would, it is close enough to debug or improve the code. Here you can see a representation of the test we have done during the development of this exercise:
 
-https://user-images.githubusercontent.com/92941081/221029740-332f5218-173a-4766-a660-861ec369dc4a.mp4
+https://user-images.githubusercontent.com/92941081/221031012-ab7ef896-b1a3-436e-831b-c5ededab11c6.mp4
+
+> NOTE:
+>
+> The simulation video is large and long. GitHub did not like that, so they might be problems when reproducing it. You can find it [here in the repo](https://github.com/Docencia-fmrico/avoid-obstacle-stressoverflow/raw/readmeImprovements/doc/img/avoiddemosim.mp4), and [this is a link to the video hosted on YouTube](https://www.youtube.com/watch?v=TxM2EIic-B8). Sorry for the inconvenience!
 
 In order to simulate physical inputs, like a button or the bumper, we acted like a node publishing messages to the appropriate topic. In the other side, we can also subscribe to the topics where the robot will publish feedback, like the leds or the sound, so we can keep track of this robot behavior section.
 
