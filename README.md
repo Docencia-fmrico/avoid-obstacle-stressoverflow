@@ -69,7 +69,7 @@ ros2 launch ir_robots kobuki.launch.py
 
 You will know if the connection was successful because the welcoming jingle! 
 
-Now open a new terminal. The last command should block the terminal we were using. Remeber to `source` again if you did not add that commands to your `.bashrc`. Finally we can launch the `avoid_obstacle_cpp` package like so:
+Now open a new terminal. The last command should have blocked the terminal we were using. Remeber to `source` again if you did not add that commands to your `.bashrc`. Finally we can launch the `avoid_obstacle_cpp` package like so:
 
 ```bash
 ros2 launch avoid_obstacle_cpp avoid_obstacle.launch.py
