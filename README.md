@@ -1,7 +1,7 @@
 # ASR-0-AvoidObstacle
 
-![distro](https://img.shields.io/badge/Ubuntu%2022-Jammy%20Jellyfish-violet)
-![distro](https://img.shields.io/badge/ROS2-Humble-blue)
+[![distro](https://img.shields.io/badge/Ubuntu%2022-Jammy%20Jellyfish-violet)](https://releases.ubuntu.com/22.04/)
+[![distro](https://img.shields.io/badge/ROS2-Humble-blue)](https://docs.ros.org/en/humble/index.html)
 [![main](https://github.com/Docencia-fmrico/avoid-obstacle-stressoverflow/actions/workflows/colcon.yaml/badge.svg?branch=main)](https://github.com/Docencia-fmrico/avoid-obstacle-stressoverflow/actions/workflows/colcon.yaml)
 
 <p align="center">
@@ -16,6 +16,68 @@ Create an autonomous robot machine using a finite state machine (FSM) to avoid o
 2. The robot advances until it finds an obstacle less than one meter in front of it.
 3. When it find an obstacle, the robot turns 90 degrees, and makes an arc movement to go over it.
 4. If while you are making the arc, you find a new obstacle, do the same thing from point 3 again.
+
+## Installation 💾
+
+### Main requirements ✅
+
+1. First of all, we need [Ubuntu](https://ubuntu.com/). It is a Linux Debian-based operating system, A.K.A Linux Distro. We are working with the **[22.04 Jammy Jellyfish 🪼](https://releases.ubuntu.com/22.04/)** version. You might be already familiar with it, however [here](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview) you have a step-by-step tutorial on how to install it on your machine.
+
+2. [ROS](https://www.ros.org/). ROS stands for *Robot Operating System*, and it is the **middleware** that the vast majority of robots out there use nowadays, and so are we! We are focusing on the latest stable release, which is **[ROS 2 Humble Hawksbill 🐢](https://docs.ros.org/en/humble/index.html)**. From there you can navigate through all the documentation, but [here](https://docs.ros.org/en/humble/Installation.html) is a shorcut to the installation page.
+
+> **FUN FACT**
+>
+> Did you know that every ROS distribution is named alphabetically? Not only that, but it is always a turtle species which starts with the current letter. Hawksbill is the colloquial name for the turtle species *Eretmochelys imbricata*. [Here](https://en.wikipedia.org/wiki/Hawksbill_sea_turtle) you can learn more about this animal if you feel curious!
+
+3. **[ir_robots](https://github.com/IntelligentRoboticsLabs/ir_robots) package**. [Intelligent Robotics Lab](https://intelligentroboticslab.gsyc.urjc.es/) is research group from the [Universidad Rey Juan Carlos](https://www.urjc.es/). They have developed the package with all the dependencies you will need, among so other things, like a simulator setup with [Gazebo](https://gazebosim.org/home). You can find the installation steps on their README, check it out!
+
+### How to use 💭
+
+Once you have those three steps, using this package is a piece of cake in comparison!
+
+First of all, you need to `source` both your ROS installation and your workspace.
+
+```bash
+source /opt/ros/<ros-distro>/setup.bash
+source <your-workspace-path>/install/setup.bash
+```
+> **PRO TIP**: You can include those lines on your `.bashrc` so every new terminal will have this work already done.
+
+Then you can move to your workspace.
+
+```bash
+cd <your-workspace-path>
+```
+
+From there, you should build the packages. If this if your first time you will probably need to build every package:
+
+```bash
+colcon build --symlink-install
+```
+
+But remeber that you can always select which packages are going to be built:
+
+```bash
+colcon build --symlink-install --packages-select avoid_obstacle_cpp
+```
+
+Once finished, you can connect to your [Kobuki](http://kobuki.yujinrobot.com/about2/) like so:
+
+```bash
+ros2 launch ir_robots kobuki.launch.py
+```
+
+You will know if the connection was successful because the welcoming jingle! 
+
+Now open a new terminal. The last command should block the terminal we were using. Remeber to `source` again if you did not add that commands to your `.bashrc`. Finally we can launch the `avoid_obstacle_cpp` package like so:
+
+```bash
+ros2 launch avoid_obstacle_cpp avoid_obstacle.launch.py
+```
+
+*Every man for himself!* The robot is finally running the program!
+
+> **PRO TIP**: From this point, we highly recommend to take cover if you do not trust the authors of this package.
 
 ## Implementation ⚙️
 
@@ -101,6 +163,8 @@ avoid_obstacle:
 ### Tests 🧾
 
 #### Simulation 🖥️
+
+(In progress...)
 
 #### Real World 🌍
 
