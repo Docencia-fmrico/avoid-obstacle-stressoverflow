@@ -117,6 +117,54 @@ We have also created a node diagram to better show how everything works inside o
 
 ![image](https://user-images.githubusercontent.com/102520602/220709216-bfa4a8a9-f4bf-4d44-aa6e-132700800bf3.png)
 
+## Code subtleties 🖱️
+
+- The multi-case `switch`. Check this snippet:
+
+```c++
+void
+AvoidObstacleNode::change_status_led(int new_state)
+{
+  kobuki_ros_interfaces::msg::Led out_led;
+
+  /*
+   * The message is manipulated depending on the state that is
+   * parsed. Some of them could have the same output, and thus the order matters.
+   * This order may differ on the numerical order they have been defined.
+   *
+   * Then, whatever message was built, it is published.
+   */
+
+  switch (new_state) {
+    case READY:
+      out_led.value = kobuki_ros_interfaces::msg::Led::ORANGE;
+      break;
+    case BACK:
+    case STOP:
+    case EMERGENCY_STOP:
+      out_led.value = kobuki_ros_interfaces::msg::Led::RED;
+      break;
+    case FORWARD:
+    case YAW_TURN_IN:
+    case YAW_TURN_OUT:
+    case DODGE_TURN:
+      out_led.value = kobuki_ros_interfaces::msg::Led::GREEN;
+      break;
+    /*
+     * There may be cases in which you do not want to update
+     * anything, so the method will return without publish anything.
+     * Any other case should be contemplated on the switch statement.
+     */
+    default:
+      return;
+  }
+
+  led_pub_->publish(out_led);
+}
+```
+
+There is a similar method to manipulate the sound. They both are called whenever the state of the robot is changed. Although the comments already provide an explanation, it is worth to highlight the lack of `break` on some of the cases of the `switch`. With this we are "merging" all of the consecutive cases together, **meaning that they all will behave identically**. The cases whose outputs will be identical, should be sorted this way to avoid code duplication. Any other case not contemplated will not update the state of the led. Same goes for the sound, since it is managed in an identical way. *Cool!*
+
 ## Observations 🔎
 
 - Grip change: During the practice we realized that the robot did not walk the same on the floor and on the carpet. This is due to the fact that they have different friction and influence the movement of the robot to a greater or lesser extent. This causes the robot to not be able to perform the turns well in some cases.
@@ -164,7 +212,13 @@ avoid_obstacle:
 
 #### Simulation 🖥️
 
-(In progress...)
+Before launching the program in the real robot, **we have tested it beforehand in a simulated enviroment**. Although it does not behave like a real robot would, it is close enough to debug or improve the code. Here you can see a representation of the test we have done during the development of this exercise:
+
+https://user-images.githubusercontent.com/92941081/221029740-332f5218-173a-4766-a660-861ec369dc4a.mp4
+
+In order to simulate physical inputs, like a button or the bumper, we acted like a node publishing messages to the appropriate topic. In the other side, we can also subscribe to the topics where the robot will publish feedback, like the leds or the sound, so we can keep track of this robot behavior section.
+
+We have noticed that the speed of the simulated robot could be completely different of the real robot (Thus the apparently erratic behaviour of the robot in the simulation). However, thanks to the [**`params.yaml`**](./config/params.yaml) file, we can quickly change these values at will before each execution without having to recompile the code.
 
 #### Real World 🌍
 
@@ -220,6 +274,5 @@ This work is licensed under a [APACHE LICENSE, VERSION 2.0][apache2.0].
 [Arantxa García]: https://github.com/arantxagb
 [Diego García]: https://github.com/dgarcu
 [Teresa Ortega]: https://github.com/mtortega2021
-
 
 [^1]: In this case, Ubuntu 22.04 Jammy Jellyfish and ROS 2 Humble Hawskbill, which is the same enviroment we are working with.
